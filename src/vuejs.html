@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO check list</title>
+
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <note v-for="todo in todos" v-bind:content="todo"></note> <!-- v-bind:content or :content -->
+        <ajout @nouvellenote="ajouterNote">
+
+        </ajout>
+       
+        <button @click="inverser">Inverser</button> <!-- @click or v-on:click-->
+    </div>
+
+    <script>
+        const vm = Vue.createApp({
+            data(){
+                return {
+                    title: "TODO list de mon site",
+                    message: "",
+                    todos : [
+                       "Apprendre VueJS",
+                       "Améliorer la navigation",
+                       "Optimiser l'affichage et le CLS"
+                    ]
+                }
+            },
+            methods: {
+                inverser(){
+                    this.todos.reverse();
+                },
+                ajouterNote(message){
+                    this.todos.push(message);
+                }
+            }
+        })
+
+        vm.component('note', {
+            props : ['content'],
+            template : `
+            <p>{{content}}</p>
+            `
+        })
+
+        vm.component('ajout', {
+            props: [],
+            emits: ['nouvellenote'],
+            data(){
+                return{
+                    interne: 'Nouveau message'
+                }
+            },
+            methods :{
+                recordNote(){
+                    this.$emit('nouvellenote', this.interne);
+                    this.interne = "";
+                }
+            },
+            template: `
+            <input type="text" v-model="interne" />
+            <button @click="recordNote" v-if="interne != ''">Ajouter une tâche</button> <!-- @click or v-on:click-->
+            `
+        })
+
+        vm.mount('#app');
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<div class="competencesPage" id="CompetencesPage">
+    <div class="competences-banner">
+        <div class="skills-banner">
+            <div class="skill-banner lang active" id="lang" (click)="switchSkill('lang')">
+                <div class="skill-text">Langages</div>
+            </div>
+            <div class="skill-banner tools" id="tools" (click)="switchSkill('tools')">
+                <div class="skill-text">Outils</div>
+            </div>
+            <div class="skill-banner other" id="other" (click)="switchSkill('other')">
+                <div class="skill-text">Général</div>
+            </div>
+        </div>
+    </div>
+    <div class="competences-block">
+        <div class="star-zone show" id="star-zone">
+            <div class="losange top" [ngClass]="currentSkill.top.inProgress == true ? 'inprogress level-'+currentSkill.top.level: 'level-'+ currentSkill.top.level"></div>
+            <div class="losange right-top" [ngClass]="currentSkill.topRight.inProgress == true ? 'inprogress level-'+currentSkill.topRight.level: 'level-'+ currentSkill.topRight.level"></div>
+            <div class="losange right-bottom" [ngClass]="currentSkill.bottomRight.inProgress == true ? 'inprogress level-'+currentSkill.bottomRight.level: 'level-'+ currentSkill.bottomRight.level"></div>
+            <div class="losange left-bottom" [ngClass]="currentSkill.bottomLeft.inProgress == true ? 'inprogress level-'+currentSkill.bottomLeft.level: 'level-'+ currentSkill.bottomLeft.level"></div>
+            <div class="losange left-top" [ngClass]="currentSkill.topLeft.inProgress == true ? 'inprogress level-'+currentSkill.topLeft.level: 'level-'+ currentSkill.topLeft.level"></div>
+            <div class="star-zone mini">
+                <div class="losange top"></div>
+                <div class="losange right-top" ></div>
+                <div class="losange right-bottom"></div>
+                <div class="losange left-bottom"></div>
+                <div class="losange left-top"></div>
+            </div>
+            <div class="text-zone show" id="text-lang">
+                <div class="skill-text skill-top level-5" title="Javascript & Typescript">
+                    <div class="yellow yellow-1">JS</div><div class="black">/</div><div class="yellow yellow-2">TS</div>
+                </div>
+                <div class="skill-text skill-top-right level-2" title="Python">
+                    <div class="yellow yellow-1">Py</div><div class="black black-1">th</div><div class="black black-2">on</div>
+                </div>
+                    <div class="skill-text skill-bottom-right level-5" title="PHP">
+                    <div class="yellow yellow-1">PH</div><div class="black">P</div>
+                </div>
+                <div class="skill-text skill-bottom-left level-5" title="HTML 5">
+                    <div class="yellow yellow-1">HT</div><div class="black">ML</div>
+                </div>
+                <div class="skill-text skill-top-left level-5" title="Sass/SCSS/CSS">
+                    <div class="black black-1">Sa</div><div class="yellow yellow-1">ss</div>
+                </div>
+            </div>
+            <div class="text-zone" id="text-tools">
+                <div class="skill-text skill-top level-5" title="Ionic">
+                    <div class="yellow yellow-1">Io</div><div class="black">n</div><div class="yellow yellow-2">ic</div>
+                </div>
+                <div class="skill-text skill-top-right level-2" title="Symfony 3">
+                    <div class="yellow yellow-1">Sym</div><div class="black black-1">fo</div><div class="black black-2">ny</div>
+                 </div>
+                 <div class="skill-text skill-bottom-right level-2" title="Zend Framework 2">
+                    <div class="yellow yellow-1">ZF</div><div class="black">2</div>
+                </div>
+                <div class="skill-text skill-bottom-left level-1 " title="VueJS">
+                    <div class="yellow yellow-1">Vue</div><div class="black">JS</div>
+                </div>
+                <div class="skill-text skill-top-left level-5" title="Angular">
+                    <div class="black black-1">Ang</div><div class="yellow yellow-1">ular</div>
+                </div>
+            </div>
+        </div>
+        <div class="other-zone" id="other-zone">
+            <div class="extra-skill-block">
+                <div class="extra-skill">
+                    <div class="skill-int">Methodologies</div>
+                    <div class="skill-name">Agile & Scrum</div>
+                </div>
+                <div class="extra-skill">
+                    <div class="skill-int">Logiciels</div>
+                    <div class="skill-name">Gimp, Illustrator, Adobe XD </div>
+                </div>
+                <div class="extra-skill">
+                    <div class="skill-int">Outils</div>
+                    <div class="skill-name">Git, suite Atlassian</div>
+                </div>
+                <div class="extra-skill">
+                    <div class="skill-int">Langues</div>
+                    <div class="skill-name">Anglais TOEIC 2019 - 765 points</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="scroll-indication-bottom" (panup)="onPan()" (swipeUp)="onPan()">
+    <div class="scroll-animation"></div>
+    <div class="animation-text" (click)="onPan()">Menu</div>
+    <div class="scroll-animation"></div>
+</div>

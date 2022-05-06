@@ -1,0 +1,30 @@
+<div class="formationPage" id="FormationPage">
+    <div class="formation-block">
+        <div id="formation-slider">
+            <div class="control_prev" *ngIf="currentSlide > 0" (click)="goPrev()"></div>
+            <div class="control_next" *ngIf="currentSlide < schools.length -1" (click)="goNext()"></div>
+            <ul id="school-slide">
+                <li *ngFor="let school of schools">
+                    <div class="school-block">
+                        <div class="school-title">
+                            <img class="school-logo" [ngClass]="school.logo" [src]="'/assets/img/school/'+school.logo+'.png'">
+                        </div>
+                        <div class="school-dates">
+                            <div class="school-field">De {{school.dateDebut}} a {{school.dateFin}}  </div>
+                            <div class="school-field">{{school.lieu}}</div>
+                        </div>
+                        <div class="school-int">{{school.diplome}}</div>
+                        <div class="school-skills">
+                            <div class="school-skills-int">
+                                Competences<div class="sep sep-1"></div><div class="sep sep-2"></div><div class="sep sep-3"></div><div class="sep sep-4"></div><div class="sep sep-5"></div>
+                            </div>
+                            <ul class="school-skill-list">
+                                <li *ngFor="let skill of school.skills">{{skill}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

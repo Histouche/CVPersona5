@@ -1,0 +1,68 @@
+<div class="presentationPage" id="PresentationPage">
+    <div class="presentation-zone">
+        <div class="infosme im-pres">
+            Jonathan Rodrigues
+        </div>
+        <div class="presentation-block">
+            <div class="presentation-block-inside">
+                <div id="presentation-block-1" class="pres-content active">
+                    <div class="pres-photo">
+                        
+                    </div>
+                    <div class="pres-intro">
+                        <ul class="infos-perso">
+                            <li class="birthday">
+                                5 avril 1992
+                            </li>
+                            <li class="adresse">
+                                68120 Pfastatt
+                            </li>
+                            <li class="mail">
+                                jnt.rodrigues68@gmail.com
+                            </li>
+                            <li class="linkdin">
+                                <a href="https://www.linkedin.com/in/jonathan-rodrigues-b30800102/" target="_blank">Mon profil Linkedin <img class="img-link" src="/assets/img/hud/external-link.png"></a>
+                            </li>
+                            <li class="facebook">
+                                <a href="https://www.facebook.com/RodrigJon" target="_blank">Mon profil facebook <img class="img-link" src="/assets/img/hud/external-link.png"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="presentation-text">
+                        Développeur front-end et intégrateur web aujourd’hui, j’ai commencé après le bac S, une licence maths-info à Mulhouse que j’ai arreté après avoir réussi la première année ( l’enseignement ne refletant pas ce que je souhaitais), je me suis donc orienté vers un DUT informatique info a Belfort que je valide en janvier 2015. 
+                        En parallèle, je m’auto-forme a l’intégration web et au graphisme (sur Gimp), étant passionné de dessin depuis l’enfance, je souhaitais toujours conserver l’aspect esthétique et graphique dans mon choix de carrière.
+                        Suite à cela, je démenage en Ile-de-France pour suivre une licence professionnelle dans le même domaine.
+                        Une fois ce diplome acquis fin 2016, je fais une année en CDI au sein d’Alphalives pour reprendre les cours un an plus tard afin de valider un RNCP de niveau 1 (equivalent Master) en développement web. Lors de ce cursus en alternance, je fus formé au framework Angular en conservant mon rôle d’intégrateur et de développeur pour l’entreprise.
+                        Considérant mon cursus terminé, je me fis embaucher par la Squad IT (anciennement Ileotech) et suis en mission pour Logic-immo depuis Janvier 2020.
+                    </div>
+                </div>
+                <div id="presentation-block-2" class="pres-content">
+                    <div class="hobby-block">
+                        <div class="hobby" *ngFor="let hobby of hobbies">
+                            <!--<div class="title-hobby" [ngClass]="hobby.image"></div>-->
+                            <div class="image-hobby" [ngClass]="hobby.image">
+                            </div>
+                            <a class="image-logo" *ngIf="hobby.link" [href]="hobby.link" title="Cliquez pour accéder à ma galerie" target="_blank">
+                                <img src="/assets/img/forms/Photos.png">
+                            </a>
+                            <div class="desc-hobby">{{hobby.name}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pres-tab tab-1 active" (click)="tabsSwitch('1')">
+            <div class="inside-tab">Infos personnelles</div>
+        </div>
+        <div class="pres-tab tab-2" (click)="tabsSwitch('2')">
+            <div class="inside-tab">Centres d'intérêt</div>
+        </div>
+    </div>
+    <div class="presentation-bg-effect">
+        <div class="pres-tab tab-1 active">
+        </div>
+        <div class="pres-tab tab-2">
+        </div>
+    </div>
+    
+</div>

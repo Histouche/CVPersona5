@@ -1,0 +1,44 @@
+<div class="menu-icon-block" id="mobile-menu-icon-block" (click)="closeMobileMenu()">
+    <div class="menu-icon" id="menu-icon"></div>
+</div>
+<div class="menu-back" id="mobile-menu-back" (pandown)="closeMobileMenu()" (swipeDown)="closeMobileMenu()">
+</div>
+<div id="mobile-menu-bg" class="" (pandown)="closeMobileMenu()" (swipeDown)="closeMobileMenu()">
+    <nav class="menu-open">
+        <div class="mobile-menu-open-link menu-home" id="mobile-menu-home" (click)="goTo('')">
+            <div class="menu-sub-block">
+                <div class="menu-open-text">Accueil</div>  
+            </div>
+        </div>
+        <div class="mobile-menu-open-link menu-pres" id="mobile-menu-pres" (click)="goTo('presentation')">
+            <div class="menu-sub-block">
+                <div class="menu-open-text">Présentation</div>
+            </div>
+        </div>
+        <div class="mobile-menu-open-link menu-exp" id="mobile-menu-exp" (click)="goTo('experiences')">
+            <div class="menu-sub-block">
+                <div class="menu-open-text">Expériences</div>
+            </div>
+        </div>
+        <div class="mobile-menu-open-link menu-comp" id="mobile-menu-comp" (click)="goTo('competences')">
+            <div class="menu-sub-block">
+                <div class="menu-open-text">Compétences</div>
+            </div>
+        </div>
+        <div class="mobile-menu-open-link menu-form" id="mobile-menu-form" (click)="goTo('formation')">
+            <div class="menu-sub-block">
+                <div class="menu-open-text">Formation</div>
+            </div>
+        </div>
+        <div class="mobile-menu-open-link menu-port" id="mobile-menu-port" (click)="goTo('portfolio')">
+            <div class="menu-sub-block">
+                <div class="menu-open-text">Portfolio</div>
+            </div>
+        </div>
+        <div class="mobile-menu-open-link menu-cont" id="mobile-menu-cont" (click)="goTo('contact')">
+            <div class="menu-sub-block">
+            <div class="menu-open-text">Contact</div>
+            </div>
+        </div>
+    </nav>
+</div>

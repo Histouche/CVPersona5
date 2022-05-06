@@ -1,0 +1,722 @@
+app-presentation{
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    .presentationPage{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        .presentation-zone{
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            width: 45%;
+            top: 150px;
+            left: 15%;
+            .im-pres{
+                top: -35px;
+                position: absolute;
+                display: block;
+                left: -45px;
+                flex: 0 0 auto;
+                right: unset;
+            }
+            .pres-tab{
+                position: absolute;
+                background-color: #000;
+                right: 0;
+                z-index: 1;
+                font-family: 'Personified UX Regular';
+                height: 50px;
+                top: -50px;
+                padding: 10px 15px;
+                line-height: 30px;;
+                font-size: 18px;
+                text-align: center;
+                cursor: pointer;   
+                transition: all linear 0.1s; 
+                overflow: hidden;
+                &.tab-1{
+                    transform: rotate(-10deg) scaleY(1.5);
+                    clip-path: polygon(0% 0%, 99% 0%, 93% 100%, 0% 100%);
+                    width: 200px;
+                    &:before{
+                        content: "";
+                        background-color: #fff;
+                        width: 120%;
+                        height: 100%;
+                    }
+                }
+                &.tab-2{
+                    right: unset;
+                    left: 85%;
+                    width: 200px;
+                    top: -15px;
+                    transform: scaleY(1.5);
+                    clip-path: polygon(0% 10%, 95% 0%, 100% 100%, 0% 100%);
+                }
+                .inside-tab{
+                    color: #000;
+                    position: relative;
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background-color: #fff;
+                        z-index: -1;
+                        left: 0;
+                        transform: skew(-11deg, -1deg);
+                        transition: all linear 0.1s;
+                    }
+                }
+                &.active{
+                    z-index: 2;
+                    cursor: default;
+                    &.tab-1{
+                        transform: rotate(-25deg) scaleY(1.5) translateY(-5px);
+                        .inside-tab{
+                            &:before{
+                                width: 90%;
+                                height: 125%;                            
+                                transform: rotate(20deg);
+                                left: 10px;
+                                clip-path: polygon(2% 16%, 100% 1%, 50% 100%, 0% 80%);
+                            }
+                        }
+                    }
+                    &.tab-2{
+                        left: calc(90% + 15px);
+                        top: 0;
+                        padding-left: 0;
+                        width: 185px;
+                        .inside-tab{
+                            &:before{
+                                transform: rotate(-20deg);
+                                clip-path: polygon(5% 15%, 100% 0%, 100% 100%, 40% 75%);
+                                height: 125%;
+                            }
+                        }
+                    }
+                    .inside-tab{
+                        color: #fff;
+                        &:before{
+                            background-color: red;
+                        }
+                    }
+                }
+            }
+            .presentation-block{
+                position: relative;
+                height: 500px;
+                max-height: 500px;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                z-index: 1;
+                font-family: 'Personified UX Regular';
+                &:before{
+                    content: '';
+                    position: absolute;
+                    width: 50%;
+                    height: 100%;
+                    top:0;
+                    background-color: #000;
+                    transform: skewX(10deg);
+                    z-index: -1;
+                }
+                &:after{
+                    content: '';
+                    position: absolute;
+                    width: 60%;
+                    left: 40%;
+                    height: 100%;
+                    top: 0;
+                    background-color: #000;
+                    z-index: -1;
+                }
+                .presentation-block-inside{
+                    overflow-y: auto;
+                    height: 100%;
+                    width: 100%;
+                    &::-webkit-scrollbar-track
+                    {
+                        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+                        background-color: #000;
+                        border: 2px solid #fff;
+                    }
+                    &::-webkit-scrollbar
+                    {
+                        width: 12px;
+                        background-color: #000;
+                    }
+                    &::-webkit-scrollbar-thumb{
+                        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+                        background-color: #fff;
+                    }
+                    .pres-content{
+                        max-height: 0;
+                        overflow-y: hidden;
+                        transition: all linear 0.25s;
+                        display: flex;
+                        flex-wrap: wrap;
+                        color: #fff;
+                        &.active{
+                            max-height: unset;
+                        }
+                        .pres-photo{
+                            background: url('/assets/img/presentation/profil.jpg') center top no-repeat;
+                            background-size: cover;
+                            width: 30%;
+                            min-height: 150px;
+                            margin: 50px 20px 30px 10px;
+                            position: relative;
+                            &:before{
+                                content: "";
+                                position: absolute;
+                                background-color: #cfcfce;
+                                width: calc(100% + 10px);
+                                height: calc(100% + 10px);
+                                z-index: -1;
+                                transform: rotate(5deg);
+                            }
+                        }
+                        .pres-intro{
+                            margin-top: 50px;
+                            flex-basis: 0;
+                            flex-grow: 1;
+                            max-width: 100%;
+                            .infos-perso{
+                                list-style: none;
+                                padding-inline-start: 50px;
+                                li{
+                                    position: relative;
+                                    line-height: 40px;
+                                    &.birthday{
+                                        &:before{
+                                            content: "";
+                                            position: absolute;
+                                            width: 40px;
+                                            height: 40px;
+                                            background: url('/assets/img/forms/Calendar.png') center no-repeat;
+                                            background-size: contain;
+                                            left: -40px;
+                                        }
+                                    }
+                                    &.adresse{
+                                        &:before{
+                                            content: "";
+                                            position: absolute;
+                                            width: 40px;
+                                            height: 40px;
+                                            background: url('/assets/img/forms/Map.png') center no-repeat;
+                                            background-size: contain;
+                                            left: -40px;
+                                        }
+                                    }
+                                    &.mail{
+                                        &:before{
+                                            content: "";
+                                            position: absolute;
+                                            width: 40px;
+                                            height: 40px;
+                                            background: url('/assets/img/forms/mail.png') center no-repeat;
+                                            background-size: contain;
+                                            left: -40px;
+                                        }
+                                    }
+                                    &.linkdin{
+                                        a{
+                                            color: red;
+                                            text-decoration: none;
+                                            img{
+                                                width: 35px;
+                                                transform: translateY(5px);
+                                            }
+                                            &:hover{
+                                                img{
+                                                    animation: bouncedLogo 0.8s infinite;
+                                                }
+                                            }
+                                        }
+                                        &:before{
+                                            content: "";
+                                            position: absolute;
+                                            width: 40px;
+                                            height: 40px;
+                                            background: url('/assets/img/forms/linkedin.png') center no-repeat;
+                                            background-size: contain;
+                                            left: -40px;
+                                        }
+                                    }
+                                    &.facebook{
+                                        a{
+                                            color: red;
+                                            text-decoration: none;
+                                            img{
+                                                width: 35px;
+                                                transform: translateY(5px);
+                                            }
+                                            &:hover{
+                                                img{
+                                                    animation: bouncedLogo 0.8s infinite;
+                                                }
+                                            }
+                                        }
+                                        &:before{
+                                            content: "";
+                                            position: absolute;
+                                            width: 40px;
+                                            height: 40px;
+                                            background: url('/assets/img/forms/Facebook.png') center no-repeat;
+                                            background-size: contain;
+                                            left: -40px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .presentation-text{
+                            line-height: 24px;
+                            font-size: 18px;
+                            padding: 20px 10px 20px 50px;
+                        }
+                        .hobby-block{
+                            padding: 50px 10px;
+                            width: 100%;
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-around;
+                            overflow: hidden;
+                            &::-webkit-scrollbar-track
+                            {
+                                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+                                background-color: #000;
+                                border: 2px solid #fff;
+                            }
+                            &::-webkit-scrollbar
+                            {
+                                width: 12px;
+                                background-color: #000;
+                            }
+                            &::-webkit-scrollbar-thumb{
+                                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+                                background-color: #fff;
+                            }
+                            .hobby{
+                                position: relative;
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: center;
+                                margin-bottom: 25px;
+                                .title-hobby{
+                                    position: relative;
+                                    z-index: 0;
+                                    color: #fff;
+                                    transition: all linear 0.1s;
+                                    transform: translate(30px,51px) scale(0.5);
+                                    
+                                    &:before{
+                                        content: "";
+                                        position: absolute;
+                                        width: 130px;
+                                        height: 65px;
+                                        top: -25px;
+                                        background: url('/assets/img/hud/arrow-hobby.png') center no-repeat;
+                                        background-size: contain;
+                                    }
+                                    &.jeu{
+                                        &:after{
+                                            content: "Jeux";
+                                            position: absolute;
+                                            width: 100px;
+                                            height: 30px;
+                                            font-size: 20px;
+                                            transform: rotate(-20deg) translate(50px,2px);
+                                        }
+                                    }
+                                    &.dessin{
+                                        &:after{
+                                            content: "Dessin";
+                                            position: absolute;
+                                            width: 100px;
+                                            height: 30px;
+                                            font-size: 20px;
+                                            transform: rotate(-20deg) translate(40px,2px);
+                                        }
+                                    }  
+                                    &.lecture{
+                                        &:after{
+                                            content: "Lecture";
+                                            position: absolute;
+                                            width: 100px;
+                                            height: 30px;
+                                            font-size: 20px;
+                                            transform: rotate(-20deg) translate(40px,2px);
+                                        }
+                                    }   
+                                    &.graph{
+                                        &:after{
+                                            content: "Graphisme";
+                                            position: absolute;
+                                            width: 100px;
+                                            height: 30px;
+                                            font-size: 20px;
+                                            transform: rotate(-20deg) translate(22px,2px);
+                                        }
+                                    }   
+                                    &.billard{
+                                        &:before{
+                                            width: 200px;
+                                            height: 95px;
+                                            top: -50px;
+                                        }
+                                        &:after{
+                                            content: "Billard/Bowling";
+                                            position: absolute;
+                                            width: 100px;
+                                            height: 30px;
+                                            font-size: 20px;
+                                            transform: rotate(-20deg) translate(40px,2px);
+                                        }
+                                    }   
+                                    &.jeu-video{
+                                        &::before{
+                                            width: 175px;
+                                            height: 80px;
+                                            top: -35px;
+                                        }
+                                        &:after{
+                                            content: "Jeux videos";
+                                            position: absolute;
+                                            width: 120px;
+                                            height: 30px;
+                                            font-size: 20px;
+                                            transform: rotate(-20deg) translate(40px,2px);
+                                        }
+                                    }  
+                                    &.muscu{
+                                        &::before{
+                                            width: 175px;
+                                            height: 80px;
+                                            top: -35px;
+                                        }
+                                        &:after{
+                                            content: "Musculation";
+                                            position: absolute;
+                                            width: 120px;
+                                            height: 30px;
+                                            font-size: 20px;
+                                            transform: rotate(-20deg) translate(40px,2px);
+                                        }
+                                    }     
+                                }
+                                .image-hobby{
+                                    position: relative;
+                                    z-index: 1;
+                                    cursor: pointer;
+                                    height: 185px;
+                                    width: 200px;
+                                    &.jeu{
+                                        &:before{
+                                            content: "";
+                                            position: absolute;
+                                            z-index: -1;
+                                            width: 100%;
+                                            height: 100%;
+                                            background: url('/assets/img/presentation/jeu-shadow.png') center no-repeat;
+                                            background-size: contain;
+                                        }
+                                        &:after{
+                                            content: "";
+                                            position: absolute;
+                                            z-index: 1;
+                                            width: 100%;
+                                            height: 100%;
+                                            background: url('/assets/img/presentation/jeu.png') center no-repeat;
+                                            background-size: contain;
+                                        }
+                                    }
+                                    &.dessin{
+                                        &:before{
+                                            content: "";
+                                            position: absolute;
+                                            z-index: -1;
+                                            width: 100%;
+                                            height: 100%;
+                                            background: url('/assets/img/presentation/jeu-shadow.png') center no-repeat;
+                                            background-size: contain;
+                                        }
+                                        &:after{
+                                            content: "";
+                                            position: absolute;
+                                            z-index: 1;
+                                            width: 100%;
+                                            height: 100%;
+                                            background: url('/assets/img/presentation/dessin-4.png') center no-repeat;
+                                            background-size: contain;
+                                        }
+                                    }
+                                    &.graph{
+                                        &:before{
+                                            content: "";
+                                            position: absolute;
+                                            z-index: -1;
+                                            width: 100%;
+                                            height: 100%;
+                                            background: url('/assets/img/presentation/jeu-shadow.png') center no-repeat;
+                                            background-size: contain;
+                                        }
+                                        &:after{
+                                            content: "";
+                                            position: absolute;
+                                            z-index: 1;
+                                            width: 100%;
+                                            height: 100%;
+                                            background: url('/assets/img/presentation/graph.png') center no-repeat;
+                                            background-size: contain;
+                                        }
+                                    }
+                                    &.lecture{
+                                        &:before{
+                                            content: "";
+                                            position: absolute;
+                                            z-index: -1;
+                                            width: 100%;
+                                            height: 100%;
+                                            background: url('/assets/img/presentation/jeu-shadow.png') center no-repeat;
+                                            background-size: contain;
+                                        }
+                                        &:after{
+                                            content: "";
+                                            position: absolute;
+                                            z-index: 1;
+                                            width: 100%;
+                                            height: 100%;
+                                            background: url('/assets/img/presentation/lecture-2.png') center no-repeat;
+                                            background-size: contain;
+                                        }
+                                    }
+                                    &.billard{
+                                        &:before{
+                                            content: "";
+                                            position: absolute;
+                                            z-index: -1;
+                                            width: 100%;
+                                            height: 100%;
+                                            background: url('/assets/img/presentation/jeu-shadow.png') center no-repeat;
+                                            background-size: contain;
+                                        }
+                                        &:after{
+                                            content: "";
+                                            position: absolute;
+                                            z-index: 1;
+                                            width: 100%;
+                                            height: 100%;
+                                            background: url('/assets/img/presentation/billard.png') center no-repeat;
+                                            background-size: contain;
+                                        }
+                                    }
+                                    &.jeu-video{
+                                        &:before{
+                                            content: "";
+                                            position: absolute;
+                                            z-index: -1;
+                                            width: 100%;
+                                            height: 100%;
+                                            background: url('/assets/img/presentation/video-shadow.png') center no-repeat;
+                                            background-size: contain;
+                                        }
+                                        &:after{
+                                            content: "";
+                                            position: absolute;
+                                            z-index: 1;
+                                            width: 100%;
+                                            height: 100%;
+                                            background: url('/assets/img/presentation/jeu-video-2.png') center no-repeat;
+                                            background-size: contain;
+                                        }
+                                    }
+                                    &.muscu{
+                                        &:before{
+                                            content: "";
+                                            position: absolute;
+                                            z-index: -1;
+                                            width: 100%;
+                                            height: 100%;
+                                            background: url('/assets/img/presentation/jeu-shadow.png') center no-repeat;
+                                            background-size: contain;
+                                        }
+                                        &:after{
+                                            content: "";
+                                            position: absolute;
+                                            z-index: 1;
+                                            width: 100%;
+                                            height: 100%;
+                                            background: url('/assets/img/presentation/muscu.png') center no-repeat;
+                                            background-size: contain;
+                                        }
+                                    }
+                                }
+                                .desc-hobby{
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    height: 1px;
+                                    width: 1px;
+                                    overflow: hidden;
+                                    transition: all linear 0.2s;
+                                    text-align: center;
+                                    opacity: 0;
+                                    padding: 0px;
+                                    z-index: -1;
+                                    color: #000;
+                                    cursor: default;
+                                    &:before{
+                                        content: "";
+                                        z-index: -1;
+                                        background-color: red;
+                                        position: absolute;
+                                        width: calc(150% + 15px);
+                                        height: calc(100% + 25px);
+                                        left: calc(-25% - 7px);
+                                        top: -13px;
+                                        transform: rotate(5deg);
+                                        clip-path: polygon(1% 5%, 100% 15%, 93% 89%, 15% 100%);
+                                    }
+                                    &:after{
+                                        content: "";
+                                        z-index: -1;
+                                        background-color: #fff;
+                                        position: absolute;
+                                        left: -25%;
+                                        top: -5px;
+                                        width: 150%;
+                                        height: calc(100% + 10px);
+                                        transform: rotate(-2deg);
+                                        clip-path: polygon(1% 5%, 100% 15%, 93% 89%, 13% 100%);
+                                    }
+                                }
+                                .image-logo{
+                                    img{
+                                        width: 50px;
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translateY(-50%);
+                                        z-index: -1; 
+                                        transition: all linear 0.2s;
+                                    }
+                                }
+                                &:hover{
+                                    .title-hobby{
+                                        z-index: 2;
+                                        transform: translate(0px, 0px) scale(1);
+                                    }
+                                    .image-hobby{
+                                        &:before{
+                                            transform: rotate(11deg) scale(1.05);
+                                        }
+                                    }
+                                    .desc-hobby{
+                                        right: 0%;
+                                        left: unset;
+                                        top: 60%;
+                                        width: auto;
+                                        height: auto;
+                                        overflow: unset;
+                                        opacity: 1;
+                                        z-index: 2;
+                                        padding: 10px;
+                                    }
+                                    .image-logo{
+                                        img{
+                                            left: 85%;
+                                            z-index: 10;
+                                            top: 40%;
+                                            animation : bouncedImg 1s infinite;
+                                        }   
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }   
+        .presentation-bg-effect{
+            position: absolute;
+            top: 0;
+            width: 45%;
+            left: 15%;
+            height: 350px;
+            z-index: -1;
+            top: 150px;
+            &:after{
+                content: "";
+                position: absolute;
+                width: 80%;
+                left: 20%;
+                height: calc(100% + 10px);
+                top: -10px;
+                background-color: #cfcfce;
+            }
+            .pres-tab{
+                position: absolute;
+                background-color: #cfcfce;
+                right: -10px;
+                z-index: -1;
+                height: 75px;
+                top: -55px;
+                padding: 10px 15px;
+                width: 220px;
+                transition: all linear 0.1s;
+                &.tab-1{
+                    right: -20px;
+                    height: 60px;
+                    top: -60px;
+                    width: 230px;
+                    transform: rotate(-15deg) scaleY(1.5);
+                    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%)
+                }
+                &.tab-2{
+                    top: -30px;
+                    transform: scaleY(1.5);
+                    left: calc(85% - 0px);
+                    clip-path: polygon(0% 7%, 93% 1%, 100% 99%, 0% 90%);
+                }
+                &.active{
+                    &.tab-1{
+                        transform: rotate(-25deg) scaleY(1.5) translateY(-5px);
+                    }
+                    &.tab-2{
+                        top: -10px;
+                        left: calc(90% - 0px);
+                    }
+                }
+            }
+        }
+    }
+    
+}
+@keyframes bouncedLogo{
+    0%{
+        transform: translateY(5px) scale(1);
+    }
+    100%{
+        transform: translateY(5px) scale(1.2);
+    }
+}
+@keyframes bouncedImg{
+    0%{
+        transform: translateY(0px) scale(1);
+    }   
+    95%{
+        transform: translateY(-5px) scale(1);
+    }
+    100%{
+        transform: translateY(0px) scale(1);
+    }
+}

@@ -1,0 +1,56 @@
+<div class="experiencesPage" id="ExperiencePage">
+    <div class="entreprises-list">
+        <div *ngFor="let company of companies" class="block-company" [id]="'block-'+company.logo">
+            <div *ngIf="company.current" class="current-company">En cours</div>
+            <div class="entreprise-block" [ngClass]="company.logo" (click)="displayInfos(company.logo)">
+                <div class="entreprise-logo" [ngClass]="company.logo">
+                    <img [src]="'/assets/img/companies/'+company.logo+'.png'" class="img-princ">
+                </div>
+                <div class="entreprise-info">
+                    <div class="entreprise-name">{{company.name}}</div>
+                    <div class="entreprise-dates">
+                        <div class="entreprise-de" [ngClass]="company.logoSpecial ? company.logoSpecial : ''"><small>{{company.endYear? 'De': "Depuis"}} {{company.begMonth}}</small> {{company.begYear}}</div>
+                        <div class="entreprise-fn" *ngIf="company.endYear != ''"><small>à {{company.endMonth}}</small> {{company.endYear}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="entreprise-block-info">
+        <div class="entreprise-info" *ngFor="let company of companies" [id]="company.logo">
+            <div class="entreprise-poste">
+                <img [src]="'/assets/img/companies/'+company.logo+'.png'" class="entreprise-logo">
+            </div>
+            <div class="entreprise-poste">
+                <div class="poste-title">Intitule du <span>p</span>oste</div>
+                <div class="poste-desc">{{company.poste}}</div>
+            </div>
+            <div class="entreprise-tasks">
+                <div class="task-title">Taches / Missions</div>
+                <div class="task-desc">
+                    <ul>
+                        <li *ngFor="let task of company.missions">
+                            {{task}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="entreprise-techno">
+                <div class="techno-title">Technos / langages</div>
+                <div class="techno-desc">
+                    <div *ngFor="let techno of company.technos" class="techno" [ngClass]="techno.logo" [title]="techno.descHover" [style]="'background-image: url(/assets/img/technos/'+ techno.logo +'.png)'"></div>
+                </div>
+            </div>
+            <div class="entreprise-techno" *ngIf="company.tools.length != 0">
+                <div class="techno-title">Outils / Methodologies</div>
+                <div class="techno-desc">
+                    <div *ngFor="let tool of company.tools" class="techno" [ngClass]="tool.logo" [title]="tool.descHover" [style]="'background-image: url(/assets/img/technos/'+ tool.logo +'.png)'"></div>
+                </div>
+            </div>
+            <div class="entreprise-projets" *ngIf="company.project.length != 0">
+                <div class="projet-title">Projets</div>
+                <div class="projet-desc"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="calendar-zone">
+    <div class="date">
+        <div class="month" [ngClass]="'m-'+month" ></div>
+        <div class="day">
+            <div class="day-first" [ngClass]="'dd-'+dayDn"></div>
+            <div class="day-first day-second" [ngClass]="'dd-'+dayUn"></div>
+        </div>
+    </div>
+    <div class="weekDayZone">
+        <svg xmlns="http://www.w3.org/2000/svg"><filter id="svgTint-b"><feColorMatrix type="matrix" values="0 0 0  0 0 0.6666666666666666 0.6666666666666666 0.6666666666666666  0 0 1 1 1  0 0  0 0 0 1 0" /></filter></svg>
+        <svg xmlns="http://www.w3.org/2000/svg"><filter id="svgTint-r"><feColorMatrix type="matrix" values="1 1 1  0 0 0 0 0  0 0 0 0 0  0 0  0 0 0 1 0" /></filter></svg>
+        <img [src]="'/assets/img/calendar/d-'+weekDay+'.png'" class="weekDay" [ngClass]="'wk-'+weekDay">
+    </div>
+    
+    <div class="weather" [ngClass]="weather">
+
+    </div>
+    <div class="moment nighttime"></div>
+</div>
+<div id="back-home" class="back-home" (click)="backHome()">
+</div>

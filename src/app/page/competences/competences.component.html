@@ -1,0 +1,154 @@
+<div class="competencesPage" id="CompetencesPage" [ngClass]="activeBanner">
+    <div id="special-plate" class="special-plate">
+        <div class="decoup"></div>
+        <div class="decoup"></div>
+        <div class="decoup"></div>
+        <div class="decoup"></div>
+        <div class="decoup"></div>
+        <div class="decoup"></div>
+        <div class="decoup"></div>
+        <div class="decoup"></div>
+    </div>
+    <div id="special-plate-2" class="special-plate">
+        <div class="decoup"></div>
+        <div class="decoup"></div>
+        <div class="decoup"></div>
+        <div class="decoup"></div>
+        <div class="decoup"></div>
+        <div class="decoup"></div>
+        <div class="decoup"></div>
+        <div class="decoup"></div>
+    </div>
+    <div class="competences-block">
+        <div class="competences-banner">
+           <!-- <div class="skills-banner">
+                <div class="skill-banner lang active" id="lang" (click)="switchStar('lang')"><div class="skill-text">LANGAGES</div></div>
+                <div class="skill-banner tools" id="tools" (click)="switchStar('tools')"><div class="skill-text">FRAMEWORKS</div></div>
+            </div>-->
+            
+        </div>  
+        <div class="competences-extra-block" >
+            <div class="extra-title">
+                <span class="special-1">C</span><span  class="normal-1">OMPE</span><span class="special-2">T</span><span class="normal-2">ENCES</span>
+            </div>
+            <div class="extra-box">
+                <div class="extra-row lang active" (click)="switchStar('lang')" id="lang">
+                    <div class="extra-name">Langages</div>
+                    <div class="extra-number">x 5</div>
+                </div>
+                <div class="extra-row tools" (click)="switchStar('tools')" id="tools" >
+                    <div class="extra-name">Frameworks</div>
+                    <div class="extra-number">x 5</div>
+                </div>
+                <div class="extra-row other" (click)="switchStar('other')" id="other">
+                    <div class="extra-name">Autres</div>
+                    <div class="extra-number">x 4</div>
+                </div>
+                <div class="extra-row langues" (click)="switchStar('langues')" id="langues" >
+                    <div class="extra-name">Langues</div>
+                    <div class="extra-number">x 2</div>
+                </div>
+                <div class="desc-row">
+                    <div class=""></div>
+                    <div class=""></div>
+                </div>
+            </div>
+            <!--<div class="extra-skill-block">
+                <div class="extra-skill">
+                    <div class="skill-int">Methodologies</div>
+                    <div class="skill-name">Agile & Scrum</div>
+                </div>
+                <div class="extra-skill">
+                    <div class="skill-int">Logiciels</div>
+                    <div class="skill-name">Gimp, Illustrator, Adobe XD </div>
+                </div>
+                <div class="extra-skill">
+                    <div class="skill-int">Outils</div>
+                    <div class="skill-name">Git, suite Atlassian</div>
+                </div>
+                <div class="extra-skill">
+                    <div class="skill-int">Langues</div>
+                    <div class="skill-name">Anglais TOEIC 2019 - 765 points</div>
+                </div>
+            </div>-->
+        </div>
+        <div class="competences-star-block skills-star show" id="unique">
+            <div class="text-zone show" id="langages">
+                <div class="skill-text skill-top level-5" title="Javascript & Typescript">
+                    <div class="yellow yellow-1">JS</div><div class="black">/</div><div class="yellow yellow-2">TS</div>
+                </div>
+                <div class="skill-text skill-top-right level-2" title="Python">
+                    <div class="yellow yellow-1">Py</div><div class="black black-1">th</div><div class="black black-2">on</div>
+                </div>
+                    <div class="skill-text skill-bottom-right level-5" title="PHP">
+                    <div class="yellow yellow-1">PH</div><div class="black">P</div>
+                </div>
+                <div class="skill-text skill-bottom-left level-5" title="HTML 5">
+                    <div class="yellow yellow-1">HT</div><div class="black">ML</div>
+                </div>
+                <div class="skill-text skill-top-left level-5" title="Sass/SCSS/CSS">
+                    <div class="black black-1">Sa</div><div class="yellow yellow-1">ss</div>
+                </div>
+            </div>
+            <div class="text-zone" id="frameworks">
+                <div class="skill-text skill-top level-5" title="Ionic">
+                    <div class="yellow yellow-1">Io</div><div class="black">n</div><div class="yellow yellow-2">ic</div>
+                </div>
+                <div class="skill-text skill-top-right level-2" title="Symfony 3">
+                    <div class="yellow yellow-1">Sym</div><div class="black black-1">fo</div><div class="black black-2">ny</div>
+                 </div>
+                 <div class="skill-text skill-bottom-right level-2" title="Zend Framework 2">
+                    <div class="yellow yellow-1">ZF</div><div class="black">2</div>
+                </div>
+                <div class="skill-text skill-bottom-left level-1 " title="VueJs">
+                    <div class="yellow yellow-1">Vue</div><div class="black">JS</div>
+                </div>
+                <div class="skill-text skill-top-left level-5" title="Angular">
+                    <div class="black black-1">Ang</div><div class="yellow yellow-1">ular</div>
+                </div>
+            </div>
+            <div class="star-zone" id="star-zone">
+                <div class="losange top" [ngClass]="currentSkill.top.inProgress == true ? 'inprogress level-'+currentSkill.top.level: 'level-'+ currentSkill.top.level"></div>
+                <div class="losange right-top" [ngClass]="currentSkill.topRight.inProgress == true ? 'inprogress level-'+currentSkill.topRight.level: 'level-'+ currentSkill.topRight.level"></div>
+                <div class="losange right-bottom" [ngClass]="currentSkill.bottomRight.inProgress == true ? 'inprogress level-'+currentSkill.bottomRight.level: 'level-'+ currentSkill.bottomRight.level"></div>
+                <div class="losange left-bottom" [ngClass]="currentSkill.bottomLeft.inProgress == true ? 'inprogress level-'+currentSkill.bottomLeft.level: 'level-'+ currentSkill.bottomLeft.level"></div>
+                <div class="losange left-top" [ngClass]="currentSkill.topLeft.inProgress == true ? 'inprogress level-'+currentSkill.topLeft.level: 'level-'+ currentSkill.topLeft.level"></div>
+            </div>
+            <div class="star-zone mini" id="star-zone-mini">
+                <div class="losange top"></div>
+                <div class="losange right-top" ></div>
+                <div class="losange right-bottom"></div>
+                <div class="losange left-bottom"></div>
+                <div class="losange left-top"></div>
+            </div>
+            <div class="no-star-zone other-zone" id="other-zone">
+                <div class="extra-skill">
+                    <div class="skill-int">Methodologies</div>
+                    <div class="skill-name">Agile & Scrum</div>
+                </div>
+                <div class="extra-skill">
+                    <div class="skill-int">Logiciels</div>
+                    <div class="skill-name">Gimp, Illustrator, Adobe XD </div>
+                </div>
+                <div class="extra-skill">
+                    <div class="skill-int">Outils</div>
+                    <div class="skill-name">Git, suite Atlassian</div>
+                </div>
+                <div class="extra-skill">
+                    <div class="skill-int">Performances & Référencement </div>
+                    <div class="skill-name">Rapports dareboost & Lightouse </div>
+                </div>
+            </div>
+            <div class="no-star-zone langues-zone" id="langues-zone">
+                <div class="extra-skill">
+                    <div class="skill-int"><img src="/assets/img/flag/Flag_of_the_United_Kingdom.png" width="20"> Anglais</div>
+                    <div class="skill-name"> TOEIC 2019 - 765 points</div>
+                </div>
+                <div class="extra-skill">
+                    <div class="skill-int"><img src="/assets/img/flag/Flag_of_France.png" width="20"> Français</div>
+                    <div class="skill-name"> Langue maternelle</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

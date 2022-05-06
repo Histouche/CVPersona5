@@ -1,1 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+/**
+* Fonts
+*/
+@font-face{
+	font-family: "Earwig Factory";
+	src: url('/assets/fonts/earwigFactoryRg.ttf') ;
+}
+@font-face{
+	font-family: "Personified UX Regular";
+	src: url('/assets/fonts/PersonifiedUXRegular.otf') ;
+}
+@font-face{
+	font-family: "Helvetica Now Display Black";
+	src: url('/assets/fonts/HelveticaNowDisplay-Black.otf') ;
+}
+@font-face{
+	font-family: "Helvetica Now Display Black Italic";
+	src: url('/assets/fonts/HelveticaNowDisplay-BlackIta.otf') ;
+}
+@font-face{
+	font-family: "Helvetica Now Display Bold";
+	src: url('/assets/fonts/HelveticaNowDisplay-Bold.otf') ;
+}
+@font-face{
+	font-family: "Helvetica Now Display Extra Bold";
+	src: url('/assets/fonts/HelveticaNowDisplay-ExtraBold.otf') ;
+}
+@font-face {
+	font-family: "Clarendon";
+	src: url('/assets/fonts/Clarendon_Regular.otf') ;
+}
+
+// creations fonts
+
+@font-face {
+	font-family: "Prisma";
+	src: url('/assets/fonts/Prisma.otf') ;
+}
+@font-face {
+	font-family: "Milestone";
+	src: url('/assets/fonts/MilestoneFreeVersion-Script.otf') ;
+}
+
+html, body{
+	overflow: hidden;
+    margin: 0;
+    height: 100%;
+}
+*{
+	box-sizing: border-box;
+}
+
+.w-100{
+	flex: 0 0 100%;
+	max-width: 100%;
+}

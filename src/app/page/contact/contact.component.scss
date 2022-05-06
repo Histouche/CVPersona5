@@ -1,0 +1,312 @@
+app-contact{
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    .contact-bg{
+        position: fixed;
+        width: 100%;
+        height: auto;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        @media (min-aspect-ratio: 16 / 9){
+            width: auto;
+            height: 100%;
+        }
+        
+    }
+    .contact-page-plate{
+        z-index: 2;
+        background-color: #000;
+        width: 70vw;
+        z-index: 3;
+        height: 150%;
+        position: fixed;
+        left: 30%;
+        top: -190px;
+        border-radius: 15px;
+        transform: rotate(-25deg);
+    }
+    .contactPage{
+        z-index: 10;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        .contact-block{
+            position: relative;
+            width: 70%;
+            height: 100%;
+            z-index: 5;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            .contact-form{
+                margin-top: 100px;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: flex-start;
+                justify-content: space-between;
+                flex: 0 0 70%;
+                .contact-title{
+                    color: red;
+                    font-family: "Helvetica Now Display Extra Bold";
+                    font-size: 50px;
+                    transform: translate(-200px, -80px) scaleY(1.5) rotate(-15deg);
+                    height: 50px;
+                    letter-spacing: -1.5px;
+                    //-webkit-text-stroke-width: 1px;
+                    //-webkit-text-stroke-color: #fff;
+                    cursor: default;
+                    flex: 0 0 100%;
+                }
+                .contact-group{
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin: 10px;
+                    .hidden{
+                        display: none;
+                    }
+                    label{
+                        color: #fff;
+                        flex: 0 0 100%;
+                        font-family: "Personified UX Regular";
+                        font-size: 20px;
+                        line-height: 26px;
+                        margin-bottom: 10px;
+                    }
+                    .input{
+                        position: relative;
+                        flex: 0 0 100%;
+                        &:before{
+                            z-index: -1;
+                            content: "";
+                            position: absolute;
+                            width: calc(100% + 12px);
+                            left: -6px;
+                            top: -6px;
+                            height: calc(100% + 12px);
+                            background-color: #fff;
+                            transform: skew(-1deg, 0deg);
+                        }
+                        &:after{
+                            z-index: -1;
+                            content: "";
+                            position: absolute;
+                            width: calc(100% + 6px);
+                            left: -3px;
+                            top: -3px;
+                            height: calc(100% + 6px);
+                            background-color: #000;
+                            transform: skew(-2deg, 0deg);
+                        }
+                        &:focus-within{
+                            &:before{
+                                animation: formFocusWhite 1s infinite;
+                            }
+                            &:after{
+                                animation: formFocusBlack 1s infinite;
+                            }
+                        }
+                        &.input-p{
+                            height: 80px;
+                        }
+                        input{
+                            position: relative;
+                            height: 40px;
+                            color: #fff;
+                            background-color: red;
+                            border: none;
+                            font-family: "Personified UX Regular";
+                            font-size: 20px;
+                            padding: 2px 5px;
+                            width: 100%;
+                            &:focus{
+                                outline: none;
+                            }
+                            &::-webkit-resizer{
+                                width: 0;
+                                height: 0;
+                                border-style: solid;
+                                border-width: 0 0 10px 10px;
+                                border-color: transparent transparent #fff transparent;
+                            }
+                        }
+                        textarea{
+                            position: relative;
+                            height: 100%;
+                            color: #fff;
+                            background-color: red;
+                            border: none;
+                            font-family: "Personified UX Regular";
+                            font-size: 20px;
+                            padding: 8px 5px;
+                            width: 100%;
+                            margin: 0;
+                            resize: vertical; 
+                            &:focus{
+                                outline: none;
+                            }
+                            &::-webkit-resizer{
+                                width: 0;
+                                height: 0;
+                                border-style: solid;
+                                border-width: 0 0 15px 15px;
+                                border-color: transparent transparent #fff transparent;
+                            }
+                        }
+                    }
+                    &.contact-last-name , &.contact-first-name, &.contact-phone-number, &.contact-mail, &.contact-reason{
+                        flex: 0 0 300px;
+                        max-width: 45%;
+                    }
+                    &.contact-text, &.contact-how{
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                        margin: 10px 0;
+                    }
+                    &.contact-info-block{
+                        flex-grow: 1;
+                        flex-basis: 0;
+                    }
+                    &.contact-submit{
+                        flex: 0 0 auto;
+                        max-width: 45%;
+                        display: block;
+                    }
+                    &.contact-how{
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        margin: 10px;
+                        margin-top: 25px;
+                        flex: 0 0 calc(100% - 20px);
+                        label{
+                            flex-grow: 1;
+                            flex-basis: 0;
+                        }
+                        .input{
+                            flex: 0 0 300px;
+                            select{
+                                position: relative;
+                                height: 100%;
+                                color: #fff;
+                                background-color: red;
+                                border: none;
+                                font-family: "Personified UX Regular";
+                                font-size: 20px;
+                                padding: 8px 5px;
+                                width: 100%;
+                                cursor: pointer;
+                                &:focus{
+                                    outline: none;
+                                }
+                            }
+                        }
+                    }
+                    &.contact-info-block{
+                        .contact-info{
+                            color: #fff;
+                            font-family: "Helvetica Now Display Extra Bold";
+                            font-size: 13px;
+                        }
+                    }
+                    &.contact-submit{
+                        justify-content: flex-end;
+                        .submit-form{
+                            position: relative;
+                            cursor: pointer;
+                            margin-top: 30px;
+                            transform: rotate(-20deg);
+                            input{
+                                font-size: 22px;
+                                line-height: 20px;
+                                color: #fff;
+                                border: none;
+                                background-color: transparent;
+                                font-family: "Helvetica Now Display Extra Bold";
+                                text-transform: uppercase;
+                                transform: scaleY(1.5);
+                                cursor: pointer;
+                                padding-left: 15px;
+                                padding-top: 0px;
+                                padding-right: 20px;
+                            }
+                            &:before{
+                                content: "";
+                                position: absolute;
+                                left: -7px;
+                                top: -5px;
+                                width: calc(100% + 12px);
+                                height: 270%;
+                                background-color: #fff;
+                                z-index: -1;
+                                -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 10% 40%);
+                                clip-path: polygon(0 0, 100% 0%, 100% 100%, 10% 40%);
+                                transform: skew(0deg, -2deg);
+                            }
+                            &:after{
+                                content: "";
+                                position: absolute;
+                                left: -3px;
+                                top: -1px;
+                                width: calc(100% + 6px);
+                                height: 220%;
+                                background-color: #000;
+                                z-index: -1;
+                                -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 10% 40%);
+                                clip-path: polygon(0 0, 100% 0%, 100% 100%, 10% 40%);
+                                transform: skew(3deg, 0deg);
+                                transition: all linear 0.2s;
+                            }
+                            &:hover{
+                                animation: submit 0.8s infinite;
+                            }
+                            &:focus-within{
+                                input{
+                                    outline: none;
+                                }
+                                &:after{
+                                    background-color: red;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@keyframes formFocusWhite {
+    0%{
+        transform: skew(-1deg, 0deg) translate(0px, 0px);
+    }
+    50%{
+        transform: skew(0deg, 0deg) translate(0px, 2px);
+    }
+    100%{
+        transform: skew(-1deg, 0deg) translate(0px, 0px);
+    }
+}
+@keyframes formFocusBlack {
+    0%{
+        transform: skew(-2deg, 0deg);
+    }
+    50%{
+        transform: skew(0deg, 0deg);
+    }
+    100%{
+        transform: skew(-2deg, 0deg);
+    }
+}
+@keyframes submit{
+    0%{
+        transform: rotate(-20deg);
+    }
+    100%{
+        transform: rotate(-20deg) translate(14px, -7px);
+    }
+}

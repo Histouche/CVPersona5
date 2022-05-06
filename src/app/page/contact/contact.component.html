@@ -1,0 +1,48 @@
+<div class="contactPage" id="ContactPage">
+    <img class="contact-bg" src="/assets/img/hud/contact_large.webp">
+    <div class="contact-page-plate"></div>
+    <div class="contact-block">
+        <form [formGroup]="form" method="post" (ngSubmit)="onSubmit()" class="contact-form">
+            <div class="contact-title">
+                Contact
+            </div>
+            <div class="contact-group contact-first-name">
+                <label for="contact-firstname">Identité*</label>
+                <div class="input">
+                    <input type="text" id="contact-lastname" [formControl]="name" required>
+                </div>
+            </div>
+            <div class="contact-group contact-mail">
+                <label for="contact-mail">Courriel*</label>
+                <div class="input">
+                    <input type="mail" id="contact-mail" [formControl]="email" required>
+                </div>
+            </div>
+            <div class="contact-group contact-how">
+                <label for="contact-mail">Comment avez-vous connu ce site? *</label>
+                <div class="input">
+                   <select required [formControl]="how">
+                       <option value="linkedin">Linkedin</option>
+                       <option value="connaissance">Connaisance</option>
+                       <option value="autre">Autre</option>
+                   </select>
+                </div>
+            </div>
+            <div class="contact-group contact-text">
+                <label for="contact-text">Raison de votre contact *</label>
+                <div class="input input-p">
+                    <textarea class="form-par" id="contact-text" [formControl]="message" required></textarea>
+                </div>
+            </div>
+            <div class="contact-group contact-info-block">
+            </div>
+            
+            <div class="contact-group contact-submit">
+                <div class="submit-form">
+                    <input type="submit" value="Envoyer">
+                </div>
+                <input [formControl]="honeypot" class="hidden" type="text" />
+            </div>
+        </form>
+    </div>
+</div>

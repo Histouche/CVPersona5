@@ -1,0 +1,96 @@
+<div class="horizon-menu">
+    <div class="menu-zone">
+        <div class="menu-link home" (click)="goTo('')">
+            <div class="link-text link-text-1">A</div>
+            <div class="link-text link-text-2">cc</div>
+            <div class="link-text link-text-3">E</div>
+            <div class="link-text link-text-4">uiL</div>
+        </div>
+        <div class="menu-link prez" (click)="goTo('presentation')">
+            <div class="link-text link-text-1">P</div>
+            <div class="link-text link-text-2">ro</div>
+            <div class="link-text link-text-3">f</div>
+            <div class="link-text link-text-4">iL</div>
+        </div>
+        <div class="menu-link exp" (click)="goTo('experiences')">
+            <div class="link-text link-text-1">E</div>
+            <div class="link-text link-text-2">xpe</div>
+            <div class="link-text link-text-3">R</div>
+            <div class="link-text link-text-4">ien</div>
+            <div class="link-text link-text-5">C</div>
+            <div class="link-text link-text-6">eS</div>
+        </div>
+        <div class="menu-link comp" (click)="goTo('competences')">
+            <div class="link-text link-text-1">T</div>
+            <div class="link-text link-text-2">al</div>
+            <div class="link-text link-text-3">E</div>
+            <div class="link-text link-text-4">ntS</div>
+        </div>
+        <div class="menu-link forma" (click)="goTo('formation')">
+            <div class="link-text link-text-1">F</div>
+            <div class="link-text link-text-2">or</div>
+            <div class="link-text link-text-3">M</div>
+            <div class="link-text link-text-4">at</div>
+            <div class="link-text link-text-5">I</div>
+            <div class="link-text link-text-6">oN</div>
+        </div>
+        <div class="menu-link crea" (click)="goTo('portfolio')">
+            <div class="link-text link-text-1">C</div>
+            <div class="link-text link-text-2">réa</div>
+            <div class="link-text link-text-3">T</div>
+            <div class="link-text link-text-4">ionS</div>
+        </div>
+        <div class="menu-link contact" (click)="goTo('contact')">
+            <div class="link-text link-text-1">C</div>
+            <div class="link-text link-text-2">on</div>
+            <div class="link-text link-text-3">T</div>
+            <div class="link-text link-text-4">acT</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="menu-icon-block" id="menu-icon-block" (click)="toggleMenu(false)">
+    <div class="menu-icon" id="menu-icon"></div>
+</div>
+<div class="menu-back" id="menu-back">
+</div>
+<div id="menu-bg" class="">
+    <nav class="menu-open">
+        <div class="menu-open-link menu-home" id="menu-home" (click)="goTo('')">
+            <div class="menu-sub-block">
+                <div class="menu-open-text">Accueil</div>  
+            </div>
+        </div>
+        <div class="menu-open-link menu-pres" id="menu-pres" (click)="goTo('presentation')">
+            <div class="menu-sub-block">
+                <div class="menu-open-text">Présentation</div>
+            </div>
+        </div>
+        <div class="menu-open-link menu-exp" id="menu-exp" (click)="goTo('experiences')">
+            <div class="menu-sub-block">
+                <div class="menu-open-text">Expériences</div>
+            </div>
+        </div>
+        <div class="menu-open-link menu-comp" id="menu-comp" (click)="goTo('competences')">
+            <div class="menu-sub-block">
+                <div class="menu-open-text">Compétences</div>
+            </div>
+        </div>
+        <div class="menu-open-link menu-form" id="menu-form" (click)="goTo('formation')">
+            <div class="menu-sub-block">
+                <div class="menu-open-text">Formation</div>
+            </div>
+        </div>
+        <div class="menu-open-link menu-port" id="menu-port" (click)="goTo('portfolio')">
+            <div class="menu-sub-block">
+                <div class="menu-open-text">Portfolio</div>
+            </div>
+        </div>
+        <div class="menu-open-link menu-cont" id="menu-cont" (click)="goTo('contact')">
+            <div class="menu-sub-block">
+            <div class="menu-open-text">Contact</div>
+            </div>
+        </div>
+    </nav>
+</div>

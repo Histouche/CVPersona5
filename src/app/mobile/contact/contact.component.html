@@ -1,0 +1,34 @@
+<div class="contactPage" id="ContactPage">
+    <form [formGroup]="form" method="post" (ngSubmit)="onSubmit()" class="contact-form">
+        <div class="contact-group contact-last-name">
+            <label for="contact-lastname">Identité*</label>
+            <div class="input">
+                <input type="text" id="contact-lastname" [formControl]="name" required>
+            </div>
+        </div>
+        <div class="contact-group contact-mail">
+            <label for="contact-mail">Courriel*</label>
+            <div class="input">
+                <input type="mail" id="contact-mail" [formControl]="email" required>
+            </div>
+        </div>
+        <input type="hidden" value="mobile" [formControl]="how">
+        <div class="contact-group contact-text">
+            <label for="contact-text">Raison de votre contact *</label>
+            <div class="input input-p">
+                <textarea class="form-par" id="contact-text" [formControl]="message" required></textarea>
+            </div>
+        </div>
+        <div class="contact-group contact-submit">
+            <div class="submit-form">
+                <input type="submit" value="Envoyer">
+            </div>
+            <input [formControl]="honeypot" class="hidden" type="text" />
+        </div>
+    </form>
+</div>
+<div class="scroll-indication-bottom" (panup)="onPan()" (swipeUp)="onPan()">
+    <div class="scroll-animation"></div>
+    <div class="animation-text" (click)="onPan()">Menu</div>
+    <div class="scroll-animation"></div>
+</div>

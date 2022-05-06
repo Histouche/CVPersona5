@@ -1,0 +1,26 @@
+<div [id]="content.id" class="popin">
+    <div class="popin-back" id="popin-back">
+    </div>
+    <div id="popin-knife" class="popin-knife">
+    </div>
+    <div class="popin-zone">
+        <div class="popin-block">
+            <div *ngIf="content.title == 'information'" class="popin-title">In<div>F</div>orma<div>T</div>ion</div>
+            <div class="popin-sub-title">{{content.subtitle}}</div>
+            <div class="popin-text-slide">
+                <div class="popin-slide" *ngFor="let t of content.text; let i=index;" [ngClass]="i+1 == currentPage? 'show': ''">
+                    {{t}}
+                </div>
+            </div>
+            <div class="nb-pages">
+                <div class="actual-page">{{currentPage}}</div>
+                <div class="total-page">/{{content.nbPages}}</div>
+                <div class="page-text">Page</div>
+            </div>
+            <div class="next-zone">
+                <div class="next-button" (click)="goNext()">SUITE</div>
+            </div>
+        </div>
+    </div>
+</div>
+

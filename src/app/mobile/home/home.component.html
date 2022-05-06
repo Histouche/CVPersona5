@@ -1,0 +1,115 @@
+<div class="mobileHomeBg" (panup)="onPan()" (swipeUp)="onPan()">
+  <div class="scroll-animation-block">
+    <div class="scroll-indication">
+      <div class="scroll-indication-text"> Glissez pour afficher ou cacher le menu</div>
+     </div>
+     <div class="scroll-animation-zone">
+      <div class="scroll-animation animation-1"></div>
+      <div class="scroll-animation animation-2"></div>
+      <div class="scroll-animation animation-3"></div>
+     </div>
+  </div>
+</div>
+<div class="info-zone" (panup)="onPan()" (swipeUp)="onPan()">
+    <div class="param-button" title="Paramètres" (click)="openSystem()"> 
+      <img src="/assets/img/forms/system.png" alt="paramètres" class="">
+    </div>
+    <div class="infos-anim"></div>
+    <div class="lighting ll"></div>
+    <div class="lighting lr"></div>
+    <div class="infos-title"><div>I</div><div>n</div><div>F</div><div>o</div><div>s</div></div>
+    <div class="break"></div>
+    <div class="days-before">Prochaine MàJ</div>
+    <div class="break"></div>
+    <div class="next-event">
+      <div class="next-event-text">Refonte navigation</div>
+      <div class="next-event-days">???</div>
+    </div>
+    <div class="break"></div>
+    <div class="next-event-progress">
+      <div class="next-event-actual"></div>
+    </div>
+    <div class="next-event-percent">50%</div>
+  </div>
+  <div class="config-system" [ngClass]="config">
+    <div class="close-system" (click)="openSystem()"></div>
+    <div class="config-head">
+      Config & Système
+    </div>
+    <div class="config-body">
+      <div class="system-title">A propos de l'application</div>
+      <div class="system-info">
+        Version de l'application : {{app.version}}
+      </div>
+      <div class="system-info">
+        Framework : Angular {{app.angularV}}
+      </div>
+      <div class="system-title">Configuration</div>
+      <div class="config-fields">
+        <div class="config-label">Météo en temps réel</div>
+        <div class="config-input">
+          <div class="config-check">
+            <div id="realW-yes" class="config-field field-yes active" (click)="realWeather(true)">Oui</div>
+            <div id="realW-no" class="config-field field-no" (click)="realWeather(false)">Non</div>
+          </div>
+        </div>
+      </div>
+      <div class="config-fields" id="weatherzone">
+        <div class="config-meteo-label">Temps</div>
+        <label class="config-meteo-par" for="clair">
+          <div class="config-meteo-title">Clair</div>
+          <div class="radio">
+            <input type="radio" name="weatherSwitch" value="clair" id="clair" (click)="updateWeather('clair')">
+            <span class="checkmark"></span>
+          </div>
+        </label>
+        <label class="config-meteo-par"  for="nuageux">
+          <div class="config-meteo-title">Nuageux</div>
+          <div class="radio">
+            <input type="radio" name="weatherSwitch"  value="nuageux" id="nuageux" (click)="updateWeather('nuageux')">
+            <span class="checkmark"></span>
+          </div>
+        </label>
+        <label class="config-meteo-par" for="pluvieux">
+          <div class="config-meteo-title" >Pluvieux</div>
+          <div class="radio">
+            <input type="radio" name="weatherSwitch" value="pluvieux" id="pluvieux" (click)="updateWeather('pluvieux')">
+            <span class="checkmark"></span>
+          </div>
+        </label>
+        <input class="hide" type="radio" name="weatherSwitch" value="disabled" id="disabledW">
+      </div>
+      <div class="config-fields" id="timezone">
+        <div class="config-meteo-label">Moment de la journée</div>
+        <label class="config-meteo-par" for="jour">
+          <div class="config-meteo-title">Jour</div>
+          <div class="radio">
+            <input type="radio" name="momentDay" value="jour" id="jour" (click)="updateDayMoment('jour')">
+            <span class="checkmark"></span>
+          </div>
+        </label>
+        <label class="config-meteo-par" for="crepuscule">
+          <div class="config-meteo-title" >Crépuscule</div>
+          <div class="radio">
+            <input type="radio" name="momentDay" value="crepuscule" id="crepuscule" (click)="updateDayMoment('crepuscule')">
+            <span class="checkmark"></span>
+          </div>
+        </label>
+        <label class="config-meteo-par"  for="soir">
+          <div class="config-meteo-title">Soir</div>
+          <div class="radio">
+            <input type="radio" name="momentDay" value="soir" id="soir" (click)="updateDayMoment('soir')">
+            <span class="checkmark"></span>
+          </div>
+        </label>
+        <label class="config-meteo-par" for="nuit">
+          <div class="config-meteo-title" >Nuit</div>
+          <div class="radio">
+            <input type="radio" name="momentDay" value="nuit" id="nuit" (click)="updateDayMoment('nuit')">
+            <span class="checkmark"></span>
+          </div>
+        </label>
+        <input class="hide" type="radio" name="momentDay" value="disabled" id="disabledT">
+      </div>
+    </div>
+  </div>

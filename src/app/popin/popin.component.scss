@@ -1,0 +1,253 @@
+.popin{
+    .popin-back{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: rgba(0,0,0,0.6);
+    }
+    .popin-zone{
+            position: fixed;
+            top: 150%;
+            left: -50%;
+            transform: translate(-50%, -50%) rotate(15deg);
+            z-index: 120;
+            transition: all linear 0.2s;
+        .popin-block{
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #343434;
+            font-family: "Personified UX Regular";
+            width: 99%;
+            max-width: 600px;
+            height: 300px;
+            align-items: flex-start;
+            position: relative;
+            align-content: flex-start;
+            @media screen and (min-width: 768px){
+                width: 600px;
+            }
+            &:before{
+                content: "";
+                z-index: -1;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: -60px;
+                left: -50px;
+                background-color: #343434;
+                transform: rotate(-5deg);
+            }
+            .popin-title{
+                position: absolute;
+                color : #fff;
+                font-family: "Helvetica Now Display Extra Bold";
+                transform: scaleY(1.5) rotate(-4deg);
+                font-size: 45px;
+                top: -45px;
+                left: -45px;
+                cursor: default;
+                div{
+                    display: inline-block;
+                    color: #343434;
+                    position: relative;
+                    padding: 0 4px;
+                    &:before{
+                        content: "";
+                        z-index: -1;
+                        position: absolute;
+                        left: 0;
+                        top: 9px;
+                        width: 100%;
+                        height: 37px;
+                        background-color: #fff;
+                    }
+                }
+            }
+            .popin-sub-title{
+                color: #343434;
+                position: relative;
+                flex: 0 0 90%;
+                max-width: 90%;
+                font-size: 20px;
+                text-align: center;
+                line-height: 40px;
+                transform: rotate(-1deg);
+                cursor: default;
+                &:before{
+                    content: "";
+                    z-index: -1;
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    width: 70%;
+                    height: 45px;
+                    background-color: #fff;
+                    clip-path: polygon(0% 10%, 100% 0%, 99% 100%, 1% 90%);
+                    transform: translateX(-50%);
+                }
+            }
+            .popin-text-slide{
+                color :#fff;
+                flex: 0 0 85%;
+                max-width: 85%;
+                font-size: 20px;
+                line-height: 24px;
+                margin-left: 5%;
+                padding: 15px 0;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                height: 200px;
+                cursor: default;
+                .popin-slide{
+                    display: none;
+                    &.show{
+                        display: block;
+                    }
+                }        
+            }
+            .nb-pages{
+                color: #fff;
+                font-family: "Helvetica Now Display Extra Bold";
+                transform: rotate(-20deg);
+                display: flex;
+                flex-wrap: wrap;
+                position: absolute;
+                bottom: 10px;
+                left: 20px;
+                align-items: flex-end;
+                letter-spacing: 1px;
+                cursor: default;
+                .actual-page{
+                    transform: scaleY(1.5);
+                    font-size: 50px;
+                }
+                .total-page{
+                    transform: scaleY(1.5);
+                    font-size: 35px;
+                }
+                .page-text{
+                    transform: scaleY(1.5);
+                    font-size: 20px;
+                }
+            }
+            .next-zone{
+                position: absolute;
+                right: 5px;
+                bottom: -5px;
+                @media screen and (min-width: 1024px){
+                    right: -90px;
+                    bottom: 27px;
+                }
+                transform: rotate(-40deg);
+                animation: nextButton 2s infinite;
+                .next-button{
+                    position: relative;
+                    width: 160px;
+                    height: 60px;
+                    background: #000;
+                    clip-path: polygon(0 0, 100% 0%, 100% 100%, 10% 40%);
+                    z-index: 1;
+                    cursor: pointer;
+                    &:before{
+                        content: "Suivant";
+                        position: absolute;
+                        letter-spacing: -2px;
+                        box-sizing: border-box;
+                        padding: 0 25px;
+                        font-size: 24px;
+                        z-index: 0;
+                        width: calc(100% - 12px);
+                        height: calc(100% - 12px);
+                        left: 6px;
+                        top: 4px;
+                        background: #fff;
+                        clip-path: polygon(0 0, 100% 0%, 100% 100%, 10% 40%);
+                    }
+                    &:after{
+                        content: "";
+                        position: absolute;
+                        z-index: -1;
+                        width: calc(100% + 10px);
+                        height: calc(100% + 10px);
+                        left: -3px;
+                        top: -5px;
+                        background: #000;
+                        clip-path: polygon(0 0, 100% 0%, 100% 100%, 10% 40%);
+                    }
+                }
+            }
+        }
+    }
+    
+    .popin-knife{
+        position: fixed;
+        z-index: 130;
+        left: calc(50% + 50px);
+        top: -5px;
+        width: 300px;
+        height: 150px;
+        background: url('/assets/img/hud/knife.png') center right no-repeat;
+        background-size: auto 100%;
+        transform: rotate(-63deg) translate(500px, 10px);
+        transition: all ease-out 0.15s;
+        transition-delay: 0.25s;
+        @media screen and (min-width: 768px){
+           top: calc( 50% - 370px);
+        }
+    }   
+
+    &.open{
+        .popin-back{
+            z-index: 110;
+        }
+        .popin-zone{
+            left: calc(2% + 40px);
+            transform: translate(0px, -50%);
+            top: 50%;
+            @media screen and (min-width: 768px){
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }   
+        }
+        .popin-knife{
+            width: 267px;
+            transform: rotate(-63deg) translate(0px, 0px);
+        }   
+    }
+    &.close{
+        .popin-back{
+            z-index: 110;
+        }
+        .popin-zone{
+            top: 150%;
+            left: -50%;
+            transform: translate(-50%, -50%) rotate(15deg);
+        }
+        .popin-knife{
+            transition-delay: 0s;
+            height: 150px;
+            transform: rotate(-63deg) translate(300px, 10px);
+        }
+    }
+}
+@keyframes nextButton{
+    0%{
+        transform: rotate(-40deg) scale(1);
+    }
+    40%{
+        transform: rotate(-35deg) translate(5%,10%) scale(1.05);
+    }
+    50%{
+        transform: rotate(-40deg) scale(1);
+    }
+    90%{
+        transform: rotate(-40deg) translate(5%,5%) scale(1.05);
+    }
+    100%{
+        transform: rotate(-40deg) scale(1);
+    }
+}

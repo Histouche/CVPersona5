@@ -1,0 +1,64 @@
+<div class="experiencesPage" id="ExperiencePage">
+    <div class="experiencesZone">
+        <div class="companies-list-zone">
+            <ul class="companies-list">
+                <li *ngFor="let company of companies; let i=index"  class="company-item" [id]="'block-'+company.logo" (click)="displayInfos(company.logo, i)">
+                    <div class="company-logo-block">
+                        <img [src]="'/assets/img/companies/'+company.logo+'.png'" class="company-logo">
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="companies-infos-zone">
+            <!--<div class="scroll-animation left"></div>
+            <div class="scroll-animation right"></div>-->
+            <div class="entreprise-info" *ngFor="let company of companies; let i=index" [id]="company.logo">
+                <div class="entreprise-poste">
+                    <img [src]="'/assets/img/companies/'+company.logo+'.png'" class="entreprise-logo">
+                </div>
+                <div class="entreprise-poste">
+                    <div class="entreprise-name">{{company.name}}</div>
+                </div>
+                <div class="entreprise-poste">
+                    <div class="entreprise-de" [ngClass]="company.logoSpecial ? company.logoSpecial : ''"><small>{{company.endYear? 'De ': "Depuis"}} {{company.begMonth}}</small>&#x20;{{company.begYear}}</div>
+                    <div class="entreprise-fn" *ngIf="company.endYear != ''"><small>à {{company.endMonth}}</small> {{company.endYear}}</div>
+                </div>
+                <div class="entreprise-poste">
+                    <div class="poste-title">Intitule du <span>p</span>oste</div>
+                    <div class="poste-desc">{{company.poste}}</div>
+                </div>
+                <div class="entreprise-poste">
+                    <div class="poste-title">Taches / Missions</div>
+                    <div class="poste-desc">
+                        <ul>
+                            <li *ngFor="let task of company.missions">
+                                {{task}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="entreprise-poste">
+                    <div class="poste-title">Technos / langages</div>
+                    <div class="techno-desc">
+                        <div *ngFor="let techno of company.technos" class="techno" [ngClass]="techno.logo" [title]="techno.descHover" [style]="'background-image: url(/assets/img/technos/'+ techno.logo +'.png)'"></div>
+                    </div>
+                </div>
+                <div class="entreprise-poste" *ngIf="company.tools.length != 0">
+                    <div class="poste-title">Outils / Methodologies</div>
+                    <div class="techno-desc">
+                        <div *ngFor="let tool of company.tools" class="techno" [ngClass]="tool.logo" [title]="tool.descHover" [style]="'background-image: url(/assets/img/technos/'+ tool.logo +'.png)'"></div>
+                    </div>
+                </div>
+                <div class="entreprise-poste"  *ngIf="company.project.length != 0">
+                    <div class="poste-title">Projets</div>
+                    <div class="poste-desc"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-indication-bottom" (panup)="onPan()" (swipeUp)="onPan()">
+        <div class="scroll-animation"></div>
+        <div class="animation-text" (click)="onPan()">Menu</div>
+        <div class="scroll-animation"></div>
+    </div>
+</div>

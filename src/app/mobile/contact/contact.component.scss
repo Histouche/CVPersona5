@@ -1,0 +1,161 @@
+mobile-app-contact{
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    .contactPage{
+        height: calc(100% - 170px);
+        max-width: 100%;
+        flex: 0 0 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 110px;
+        .contact-form{
+            display: flex;
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            z-index: 1;
+            flex-direction: column;
+            max-width: calc(100% - 40px);
+            margin-left: 20px;
+            font-family: 'Personified UX Regular';
+            .contact-group{
+                display: flex;
+                flex-wrap: wrap;
+                position: relative;
+                margin-bottom: 15px;
+                .hidden{
+                    display: none;
+                }
+                label{
+                    position: absolute;
+                    color: #000;
+                    flex-grow: 0;
+                    font-family: 'Personified UX Regular';
+                    font-size: 20px;
+                    line-height: 26px;
+                    background: #fff;
+                    border: 4px solid #000;
+                    z-index: 1;
+                    padding: 1px 4px;
+                    top: -5px;
+                    left: -10px;
+                    transform: rotate(-7deg);
+                }
+                .input{
+                    position: relative;
+                    flex: 0 0 100%;
+                    margin-top: 25px;
+                    &:before{
+                        z-index: -1;
+                        content: "";
+                        position: absolute;
+                        width: calc(100% + 12px);
+                        left: -6px;
+                        top: -6px;
+                        height: calc(100% + 12px);
+                        background-color: #fff;
+                        transform: skew(-1deg,0deg);
+                    }
+                    &:after{
+                        z-index: -1;
+                        content: "";
+                        position: absolute;
+                        width: calc(100% + 6px);
+                        left: -3px;
+                        top: -3px;
+                        height: calc(100% + 6px);
+                        background-color: #000;
+                        transform: skew(-2deg,0deg);
+                    }
+                    input{
+                        position: relative;
+                        height: 40px;
+                        color: #fff;
+                        background-color: red;
+                        border: none;
+                        font-family: 'Personified UX Regular';
+                        font-size: 20px;
+                        padding: 2px 5px;
+                        width: 100%;
+                    }
+                    textarea{
+                        position: relative;
+                        height: 100%;
+                        color: #fff;
+                        background-color: red;
+                        border: none;
+                        font-family: 'Personified UX Regular';
+                        font-size: 20px;
+                        padding: 8px 5px;
+                        width: 100%;
+                        margin: 0;
+                        resize: vertical;
+                        min-height: 80px;
+                    }
+                }
+                &.contact-text{
+                    label{
+                        transform: rotate(-1deg);
+                    }
+                }
+                &.contact-info-block{
+                    margin: 0;
+                    color: #fff;
+                    font-size: 12px;
+                    font-family: 'Helvetica Now Display Extra Bold';
+                }
+                &.contact-submit{
+                    justify-content: flex-end;
+                    .submit-form{
+                        position: relative;
+                        cursor: pointer;
+                        margin-top: 30px;
+                        transform: rotate(-20deg);
+                        &:before{
+                            content: "";
+                            position: absolute;
+                            left: -7px;
+                            top: -5px;
+                            width: calc(100% + 12px);
+                            height: 270%;
+                            background-color: #fff;
+                            z-index: -1;
+                            clip-path: polygon(0 0,100% 0,100% 100%,10% 40%);
+                            transform: skew(0deg,-2deg);
+                        }
+                        &:after{
+                            content: "";
+                            position: absolute;
+                            left: -3px;
+                            top: -1px;
+                            width: calc(100% + 6px);
+                            height: 220%;
+                            background-color: #000;
+                            z-index: -1;
+                            clip-path: polygon(0 0,100% 0,100% 100%,10% 40%);
+                            transform: skew(3deg,0deg);
+                            transition: all .2s linear;
+                        }
+                        input{
+                            font-size: 22px;
+                            line-height: 20px;
+                            color: #fff;
+                            border: none;
+                            background-color: initial;
+                            font-family: 'Helvetica Now Display Extra Bold';
+                            text-transform: uppercase;
+                            transform: scaleY(1.5);
+                            cursor: pointer;
+                            padding-left: 15px;
+                            padding-top: 0;
+                            padding-right: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
