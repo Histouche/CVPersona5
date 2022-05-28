@@ -1,0 +1,63 @@
+<div class="profil">
+    <img class="profil__barreau" src="/assets/img/backgrounds/barreaux_prisons.webp">
+    <div class="profil__justine">
+        <img class="profil__justine__body" src="/assets/img/profil/justine_body.png">
+        <div class="profil__justine__eye"></div>
+        <img class="profil__justine__hair__1" src="/assets/img/profil/justine_hair_1.png">
+        <img class="profil__justine__hair__2" src="/assets/img/profil/justine_hair_2.png">
+        <img class="profil__justine__hair__3" src="/assets/img/profil/justine_hair_3.png">
+        <img class="profil__justine__hair__4" src="/assets/img/profil/justine_hair_4.png">
+    </div>
+    <div class="profil__caroline">
+        <img class="profil__caroline__body" src="/assets/img/profil/caroline_body.png">
+        <div class="profil__caroline__eye"></div>
+        <img class="profil__caroline__tie" src="/assets/img/profil/caroline_tie.png">
+    </div>
+    <!-- smoke animation -->
+    <section class="profil__smoke">
+        <div class="profil__smoke__1"><img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/animation-smoke-img/images/smoke-1.png"></div>
+        <div class="profil__smoke__1 ag-smoke__delay-1"><img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/animation-smoke-img/images/smoke-1.png"></div>
+        <div class="profil__smoke__1 ag-smoke__delay-2"><img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/animation-smoke-img/images/smoke-1.png"></div>
+        <div class="profil__smoke__2"><img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/animation-smoke-img/images/smoke-2.png"></div>
+        <div class="profil__smoke__2 ag-smoke__delay-1"><img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/animation-smoke-img/images/smoke-2.png"></div>
+        <div class="profil__smoke__2 ag-smoke__delay-2"><img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/animation-smoke-img/images/smoke-2.png"></div>
+        <div class="profil__smoke__3"><img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/animation-smoke-img/images/smoke-3.png"></div>
+        <div class="profil__smoke__3 ag-smoke__delay-1"><img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/animation-smoke-img/images/smoke-3.png"></div>
+        <div class="profil__smoke__3 ag-smoke__delay-2"><img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/animation-smoke-img/images/smoke-3.png"></div>
+        <div class="profil__smoke__4"><img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/animation-smoke-img/images/smoke-4.png"></div>
+        <div class="profil__smoke__4 ag-smoke__delay-1"><img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/animation-smoke-img/images/smoke-4.png"></div>
+        <div class="profil__smoke__4 ag-smoke__delay-2"><img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/animation-smoke-img/images/smoke-4.png"></div>
+        <div class="profil__smoke__format-container">
+        </div>
+    </section>
+    <!-- Menu LVL 1 -->
+    <div class="profil__spike">
+        <a href="javascript:void(0)">
+            <div class="profil__spike__left__img" (click)="goToLvl2('left')" [ngClass]="activateLeft">
+                <div class="profil__spike__left__img__text__1">Infos</div>
+                <div class="profil__spike__left__img__text__2">personnelles</div>
+            </div>
+        </a> 
+        <a href="javascript:void(0)">
+            <div class="profil__spike__right__img" (click)="goToLvl2('right')" [ngClass]="activateRight">
+                <div class="profil__spike__right__img__text__1">Centres</div>
+                <div class="profil__spike__right__img__text__2">d'intérêt</div>
+            </div>
+        </a>
+    </div>
+    <!-- Menu LVL 2 -->
+    <div class="profil__content" [ngClass]="activedContent">
+        <div class="profil__content__block" [ngClass]="lvl2Window">
+            <div class="profil__content__block__infos">
+                <div class="profil__content__block__infos__photo">
+                    <img src="/assets/img/presentation/profil_2.jpg" class="profil__content__block__infos__photo__img">
+                </div>
+                <div class="profil__content__block__infos__reseaux"></div>
+            </div>
+            <div class="profil__content__block__text"></div>
+        </div>
+        <div class="profil__content__ci" [ngClass]="lvl2Window">
+
+        </div>
+    </div>
+</div>

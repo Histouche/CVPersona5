@@ -30,6 +30,7 @@ import { SynthwaveComponent } from './creations/synthwave/synthwave.component';
 import { MonokumaTheaterComponent } from './creations/monokuma-theater/monokuma-theater.component';
 import { VelvetAnimationComponent } from './creations/velvet-animation/velvet-animation.component';
 import { VoidSoulComponent } from './creations/void-soul/void-soul.component';
+import { ProfilComponent } from './pages/profil/profil.component';
 
 // hammerjs config
 @Injectable()
@@ -62,7 +63,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     SynthwaveComponent,
     MonokumaTheaterComponent,
     VelvetAnimationComponent,
-    VoidSoulComponent
+    VoidSoulComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,

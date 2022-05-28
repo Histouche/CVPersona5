@@ -6,6 +6,7 @@
     <div class="popin-zone">
         <div class="popin-block">
             <div *ngIf="content.title == 'information'" class="popin-title">In<div>F</div>orma<div>T</div>ion</div>
+            <div *ngIf="content.title == 'shills'" class="popin-title">Et <div> Non</div> LES <div>Sh</div>iLLS</div>
             <div class="popin-sub-title">{{content.subtitle}}</div>
             <div class="popin-text-slide">
                 <div class="popin-slide" *ngFor="let t of content.text; let i=index;" [ngClass]="i+1 == currentPage? 'show': ''">

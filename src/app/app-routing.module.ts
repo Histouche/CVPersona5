@@ -13,6 +13,9 @@ import { MobileContactComponent } from './mobile/contact/contact.component';
 import { MobilePresentationComponent } from './mobile/presentation/presentation.component';
 import { MobileCompetencesComponent } from './mobile/competences/competences.component';
 import { MobileExperiencesComponent } from './mobile/experiences/experiences.component';
+import { ProfilComponent } from './pages/profil/profil.component';
+
+// V2 
 
 const routes: Routes = [
   {path: 'experiences', component: ExperiencesComponent},
@@ -28,7 +31,8 @@ const routes: Routes = [
   {path: 'mobile/contact', component: MobileContactComponent},
   {path: 'mobile/presentation', component: MobilePresentationComponent},
   {path: 'mobile/competences', component: MobileCompetencesComponent},
-  {path: 'mobile/experiences', component: MobileExperiencesComponent}
+  {path: 'mobile/experiences', component: MobileExperiencesComponent},
+  {path: 'profil', component: ProfilComponent}
 ];
 
 @NgModule({

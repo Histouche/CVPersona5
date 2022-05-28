@@ -47,6 +47,16 @@ export class AppComponent {
   
   public stars:String = "hide";
 
+  public shills = {
+    id: "shills",
+    title: 'shills',
+    subtitle: "Toujours pas",
+    text: [
+      "Et vive le javascript"
+    ],
+    nbPages: 1
+  }
+  
   public tuto = {
     id: "tutorial",
     title: 'information',
@@ -114,7 +124,7 @@ export class AppComponent {
 
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(this.userAgent)){
       this.device = 'mobile';
-      this.router.navigate(['mobile']);
+      this.router.navigate(['/profil']);
       
       /*setTimeout(() => {
         document.getElementById('mobileLoading')?.classList.add('open');
@@ -123,10 +133,11 @@ export class AppComponent {
         this.knifeStrike.play();
       }, 1500)*/
     } else{
-      this.router.navigate(['/portfolio']);
+      this.router.navigate(['/profil']);
     }
     // hide name/surname
     document.getElementById('infosme')?.classList.remove('show');
+    
   
   }
 
