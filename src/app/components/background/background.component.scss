@@ -1,0 +1,818 @@
+.cityBg{
+    position: fixed;
+    width: 100%;
+    height: auto;
+    top: 0;
+    z-index: 2;
+    #city{
+        position: fixed;
+        z-index: 1;
+        width: 200%;
+        height: auto;
+        bottom: 0;
+        transform: translateX(-50%);
+        left: 50%;
+        @media screen and (min-width: 1024px){
+            width: 100%;
+            height: auto;
+            left: unset;
+            bottom: -33%;
+            transform: translateX(0%);
+            @media (max-aspect-ratio: 16 / 9){
+                height: 100%;
+                width: auto;
+            }
+        }
+        path, rect, polygon{
+            transition: all linear 0.1s;
+        }
+        #Specks{
+            display: none;
+        }
+        &.morning, &.launchtime, &.afternoon, &.twillight, &.rainy{
+            #lights, #lights + g, #WindowBlackMid, #WindowBlackMid2{
+                display: none;
+            }
+            #backBuilding{
+                fill: #ededed;
+            }
+            #WindowWhiteMid{
+                polygon, path, rect{
+                    fill: #e4e4e4;
+                }
+            }
+            #WindowWhiteBack{
+                rect, polygon, path{
+                    fill: #f5f4f2;
+                }
+            }
+            #middleBuilding{
+                fill: #cbcbcb;
+            }
+            #WindowWhiteBack{
+                rect, polygon, path{
+                    fill: #868485;
+                }
+            }
+            #SVGID_2_ + path{
+                fill: #a0a0a0;
+            }
+            #SVGID_3_ + path{
+                fill: #585858;
+            }
+            #SVGID_4_ + path{
+                fill: #949494;
+            }
+            #SVGID_5_ + path{
+                fill: #808080;
+            }
+            #SVGID_6_ + path{
+                fill: #414141;
+            }
+            #addSvg{
+                path:first-child{
+                    fill: #585858;
+                }
+                polygon{
+                    fill : #949494;
+                }
+            }
+            #WindowWhiteMid2{
+                rect, polygon, path{
+                    fill: #d1d1d1;
+                }
+            }
+        }
+        &.twillight{
+            #backBuilding{
+                fill: #edcab3;
+            }
+            #middleBuilding{
+                fill: #cbaa93;
+            }
+            #WindowWhiteMid{
+                path, rect, polygon{
+                    fill: #e4c4af;
+                }   
+            }
+            #WindowWhiteBack{
+                polygon, rect, path{
+                    fill: #e4bda3;
+                }  
+            }
+            #SVGID_2_ + path{
+                fill: #a08371;
+            }
+            #SVGID_3_ + path{
+                fill: #584132;
+            }
+            #SVGID_4_ + path{
+                fill: #946d55;
+            }
+            #SVGID_5_ + path{
+                fill: #80624e;
+            }
+            #SVGID_6_ + path{
+                fill: #412f23;
+            }
+            #addSvg{
+                path:first-child{
+                    fill: #584336;
+                }
+                polygon{
+                    fill : #937059;
+                }
+                & + g{
+                    g{
+                        polygon, rect{
+                            fill: #6e5748;
+                        }
+                    }
+                    path:nth-child(2){
+                        fill: #514035;
+                    }
+                    path:nth-child(3){
+                        fill: #cca185;
+                    }
+                }
+            }
+            #buildingMidLights{
+                polygon, rect, path{
+                    fill: #936e55;
+                }
+            }
+            #WindowWhiteMid2{
+                rect, polygon, path{
+                    fill: #d1a58a;
+                }
+            }
+            #WindowsFront{
+                path, polygon{
+                    fill: #9d765c;
+                }
+            }
+        }
+        &.evening, &.night{
+            #lights{
+                g{
+                    transition: all linear 0.1s;
+                    animation: lights 1.5s infinite;
+                }
+            }
+            #lights-2{
+                g{
+                    transition: all linear 0.1s;
+                    animation: lights 1.5s infinite;
+                    animation-delay: 0.15s;
+                }
+            }
+        }
+    }
+    .background-svg{
+        display: none;
+        &#experiences-sub-background{
+
+            transition: all linear 0.2s;
+            transform: translateX(-500px);
+        }
+        &.show{
+            display: block;
+            &#experiences-sub-background{
+                transform: translateX(0px);
+            }
+        }
+    }
+}
+#svg{
+    height: 100vh;
+    width: auto;
+    animation: intro 1s;
+    float: right;
+    z-index: 4;
+    position: relative;
+    &.left{
+        float: left;
+    }
+    &.competences{
+        @media (min-aspect-ratio: 16 / 9){
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+@keyframes drop {
+    0% {
+      transform: translateY(0vh);
+    }
+    75% {
+      transform: translateY(90vh);
+    }
+    100% {
+      transform: translateY(90vh);
+    }
+}
+@keyframes stem {
+    0% {
+      opacity: 1;
+    }
+    65% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+
+
+@keyframes cloudLeft{
+    0%{
+        left : 120%;
+    }
+    100%{
+        left: -20%;
+    }
+}
+@keyframes cloudRight{
+    0%{
+        left : -20%;
+    }
+    100%{
+        left: 120%;
+    }
+}
+// weather bloc
+.date-weather-bloc{
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    z-index: 101;
+}
+.menu-bloc{
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    z-index: 100;
+}
+// transiton menu
+#transition-backbody, #transition-rope, #transition-frontbody, #transition-hair, #transition-hair2{
+    &.animation{
+        animation: balance 1.5s forwards;
+    }
+}
+@keyframes balance{
+    0%{
+        transform: translate(0px, 0px);
+    }
+    20%{
+        transform: translate(-200px, -80px);
+    }
+    100%{
+        transform: translate(100%, 10px);
+    }
+}
+
+// transition
+#color-transition{
+    position: fixed;
+    z-index: 98;
+    width: 100%;
+    height: 150%;
+    pointer-events: none;
+    background-color: #000;
+    top: -260%;
+    left: 0;
+    &:before{
+        content:"";
+        position: fixed;
+        width: 100vw;
+        height: 100vw;
+        background-color: #000;
+        transform: rotate(45deg);
+    }
+    &.animate{
+        animation: cl-tr 2s forwards;
+    }
+}
+@keyframes cl-tr{
+    0%{
+        top: -260%;
+    }
+    10%{
+        top: -260%;
+    }
+    40%{
+        top: -50%;
+        left: 0;
+    }
+    70%{
+        left: 0;
+    }
+    90%{
+        top: 0;
+        left: 150%
+    }
+    100%{
+        top: 0;
+        left: 150%
+    }
+}
+#bg-transition{
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+#tr-body{
+    height: 50vh;
+    width: auto;
+    position: fixed;
+    left: 40%;
+    transform: translateX(-50%); 
+    top: -80vh;
+    &.animate{
+        animation: trBody 2s forwards;
+    }
+    @media screen and (min-width: 768px){
+        height: 80vh;
+    }
+}
+@keyframes trBody{
+    0%{
+        top: -80vh;
+    }
+    25%{
+        top: 0;
+    }
+    35%{
+        top: -80vh;
+    }
+    100%{
+        top: -80vh;
+    }
+}
+#left-hand{
+    height: 40px;
+    width: auto;
+    position: fixed;
+    left: 35%;
+    top: -15%;
+    transform: rotate(0deg);
+    &.animate{
+        animation: leftHandM 1.5s forwards;
+    }
+    @media screen and (min-width: 768px){
+        height: 80px;
+        &.animate{
+            animation: leftHand 1.5s forwards;
+        }
+    }
+}
+@keyframes leftHandM{
+    0%{
+        height: 0px;
+        left: 25%;
+        top: -10%;
+        transform: rotate(20deg);
+    }
+    20%{
+        height: 0px;
+        left: 25%;
+        top: 33%;
+        transform: rotate(20deg);
+    }
+    25%{
+        height: 40px;
+        left: 25%;
+        top: 33%;
+        transform: rotate(20deg);
+    }
+    70%{
+        left: 35%;
+        top: 33%;
+        transform: rotate(-5deg);
+    }
+    75%{
+        left: 35%;
+        top: 31%;
+        transform: rotate(0deg);
+    }
+    100%{
+        left: 100%;
+        top: 25%;
+    }
+}
+@keyframes leftHand{
+    0%{
+        height: 0px;
+        left: 35%;
+        top: -10%;
+        transform: rotate(20deg);
+    }
+    20%{
+        height: 0px;
+        left: 35%;
+        top: 33%;
+        transform: rotate(20deg);
+    }
+    25%{
+        height: 80px;
+        left: 35%;
+        top: 33%;
+        transform: rotate(20deg);
+    }
+    70%{
+        left: 35%;
+        top: 33%;
+        transform: rotate(-5deg);
+    }
+    75%{
+        left: 35%;
+        top: 31%;
+        transform: rotate(0deg);
+    }
+    100%{
+        left: 100%;
+        top: 25%;
+    }
+}
+#right-hand{
+    height: 25px;
+    width: auto;
+    position: fixed;
+    left: 40%;
+    bottom: 100%;
+    opacity: 0;
+    &.animate{
+        animation: rightHandM 1.5s forwards;
+    }
+    @media screen and (min-width: 768px){
+        height: 60px;
+        &.animate{
+            animation: rightHand 1.5s forwards;
+        }
+    }
+}
+@keyframes rightHandM{
+    0%{
+        left: 40%;
+        bottom: 100%;
+        opacity: 0;
+    }
+    20%{
+        left: 40%;
+        bottom: 100%;
+        opacity: 0;
+    }
+    49%{
+        left: 45%;
+        bottom: 35%;
+        opacity: 0;
+    }
+    50%{
+        left: 45%;
+        bottom: 35%;
+        opacity: 1;
+    }
+    55%{
+        left: 45%;
+        bottom: 35%;
+    }
+    70%{
+        left: 45%;
+        bottom: 35%;
+        opacity: 1;
+    }
+    71%{
+        left: 45%;
+        bottom: 35%;
+        opacity: 0;
+    }
+
+    100%{
+        left: 100%;
+        bottom: 45%;
+        opacity: 0;
+    }
+}
+@keyframes rightHand{
+    0%{
+        left: 40%;
+        bottom: 100%;
+        opacity: 0;
+    }
+    20%{
+        left: 40%;
+        bottom: 100%;
+        opacity: 0;
+    }
+    49%{
+        left: 45%;
+        bottom: 0%;
+        opacity: 0;
+    }
+    50%{
+        left: 45%;
+        bottom: 0%;
+        opacity: 1;
+    }
+    55%{
+        left: 45%;
+        bottom: 0%;
+    }
+    70%{
+        left: 45%;
+        bottom: 0%;
+        opacity: 1;
+    }
+    71%{
+        left: 45%;
+        bottom: 0%;
+        opacity: 0;
+    }
+
+    100%{
+        left: 100%;
+        bottom: 45%;
+        opacity: 0;
+    }
+}
+#speed-rh{
+    height: 40px;
+    width: auto;
+    position: fixed;
+    left: 25%;
+    bottom: 125%;
+    transform: rotate(70deg);
+    opacity: 1;
+    &.animate{
+        animation: speedRightHandM 1.5s forwards;
+    }
+    @media screen and (min-width: 768px){
+        height: 80px;
+        &.animate{
+            animation: speedRightHand 1.5s forwards;
+        }
+    }
+}
+@keyframes speedRightHandM{
+    0%{
+        left: 5%;
+        bottom: 125%;
+        opacity: 1;
+    }
+    20%{
+        left: 5%;
+        bottom: 125%;
+        opacity: 1;
+    }
+    45%{
+        left: 10%;
+        bottom: 50%;
+        opacity: 1;
+    }
+    56%{
+        left: 10%;
+        bottom: 50%;
+        opacity: 0;
+    }
+    70%{
+        left: 10%;
+        bottom: 50%;
+        opacity: 0;
+        transform: rotate(70deg);
+    }
+    71%{
+        left: 10%;   
+        bottom: 35%;
+        opacity: 1;
+        transform: rotate(-25deg);
+    }
+    100%{
+        left: 100%;
+        bottom: 50%;
+        transform: rotate(0deg);
+    }
+}
+@keyframes speedRightHand{
+    0%{
+        left: 25%;
+        bottom: 125%;
+        opacity: 1;
+    }
+    20%{
+        left: 25%;
+        bottom: 125%;
+        opacity: 1;
+    }
+    45%{
+        left: 33%;
+        bottom: 150px;
+        opacity: 1;
+    }
+    56%{
+        left: 33%;
+        bottom: 150px;
+        opacity: 0;
+    }
+    70%{
+        left: 33%;
+        bottom: 150px;
+        opacity: 0;
+        transform: rotate(70deg);
+    }
+    71%{
+        left: 33%;
+        bottom: 150px;
+        opacity: 1;
+        transform: rotate(-25deg);
+    }
+    100%{
+        left: 100%;
+        bottom: 50%;
+        transform: rotate(0deg);
+    }
+}
+#head{
+    height: 60px;
+    width: auto;
+    position: fixed;
+    left: 45%;
+    top: -20%;
+    transform: rotate(50deg);
+    &.animate{
+        animation: head 1.5s forwards;
+    }
+    @media screen and (min-width: 768px){
+        height: 115px;
+    }
+}
+@keyframes head{
+    0%{
+        left: 45%;
+        top: -20%;
+        transform: rotate(15deg);
+    }
+    20%{
+        left: 45%;
+        top: -20%;
+        transform: rotate(15deg);
+    }
+    40%{
+        left: 50%;
+        top: 46%;
+        transform: rotate(15deg);
+    }
+    45%{
+        left: 50%;
+        top: 46%;
+        transform: rotate(50deg);
+    }
+    56%{
+        left: 50%;
+        bottom: 150px;
+        transform: rotate(55deg);
+    }
+    65%{
+        left: 50%;
+        top: 46%;
+        transform: rotate(0deg);
+    }
+    71%{
+        left: 50%;
+        top: 46%;
+        transform: rotate(0deg);
+    }
+    100%{
+        left: 100%;
+        top: 35%;
+        transform: rotate(0deg);
+    }
+}
+
+#page-plate{
+    background-color: #000;
+    width: 88vw;
+    z-index: 3;
+    height: 150%;
+    position: fixed;
+    left: -100%;
+    border-radius: 15px;
+    transition: all linear 0.1s;
+    transform: rotate(0deg);
+    &.experiences{
+        transform: rotate(28deg);
+        top: -199px;
+        left: 0;
+    }
+    &.competences{
+        transform: rotate(-28deg);
+        top: -350px;
+        left: unset;
+        right: -30%;
+    }
+    &.formation{
+        transform: rotate(-20deg);
+        height: 120%;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+    &.mobile-competences{
+        width: 200vw;
+        height: 70vh;
+        top: 12.5vh;
+        left: -25vw;
+        transform: rotate(-15deg);
+        &:before{
+            content: "";
+            position: absolute;
+            background: #cfcfce;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            transition: all linear .1s;
+        }
+        &.other{
+            &:before{
+                height: 100%;
+            }
+        }
+    }
+}
+#page-title{
+    position: fixed;
+    display: none;
+    z-index: 1111;
+    mix-blend-mode: difference;
+    color: #fff;
+    &.show{
+        display: block;
+    }
+    &.presentation{
+        right: 100px;
+        bottom: 100px;
+        transform: rotate(-15deg);
+    }
+    &.experiences{
+        left: 160px;
+        bottom: 50px;
+        transform: rotate(-10deg);
+    }
+    &.formation{
+        left: 160px;
+        bottom: 125px;
+        transform: rotate(-10deg);
+    }
+    &.competences{
+        left: 225px;
+        top: 35px;
+        transform: rotate(13deg) scale(0.75);
+        color: #cfcfce;
+    }
+    h1{
+        font-family: 'Earwig Factory';
+        font-size: 55px;
+        margin: 0;
+        font-weight: 500;
+        &::first-letter{
+            font-size: 70px;
+        }
+    }
+    h2{
+        text-align: center;
+        font-family: "Personified UX Regular";
+        font-weight: 500;
+        margin: 10px 0;
+    }
+    @media (max-width: 768px){
+        &.show{
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width: 1300px){
+    .mainMenu{
+        .cityBg{
+            &.night, &.morning, &.launchtime, &.afternoon, &.evening, &.twillight, &.rainy{
+                background-position: 100% -100%;
+            } 
+        } 
+    }
+}
+@keyframes lights{
+    0%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
